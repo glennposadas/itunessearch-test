@@ -6,43 +6,49 @@
 //  Copyright © 2020 CitusLabs. All rights reserved.
 //
 
-import Alamofire
-import EFInternetIndicator
 import Moya
-import SwiftyJSON
 
 let searchProvider = MoyaProvider<SearchService>(plugins: [CachePolicyPlugin()])
 
-enum DeliveryService {
-    case getDeliveries
+enum SearchService {
+    /// Search for tracks.
+    /// https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all
+    case search(term: String, country: String, media: String)
 }
 
-// MARK: - TargetType Protocol Implementationm
+// MARK: - TargetType Protocol Implementation
 
-extension DeliveryService: TargetType {
+extension SearchService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.npoint.io/d945963bf319f2316bd7")!
+        CoreService.baseURLString
     }
     
     var path: String {
         switch self {
-        case .getDeliveries: return ""
+        case .search: return "/search"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getDeliveries: return .get
+        case .search: return .get
         }
     }
     
     var sampleData: Data {
-        return Data(base64Encoded: "")!
+        return CoreService.stubbedResponse("SearchResut")
     }
     
     var task: Task {
         switch self {
-        case .getDeliveries: return .requestPlain
+        case let .search(term, country, media):
+            return .requestParameters(
+                parameters: [
+                    "term": term,
+                    "country" : country,
+                    "media": media
+                ], encoding: URLEncoding.queryString
+            )
         }
     }
     
@@ -53,10 +59,10 @@ extension DeliveryService: TargetType {
 
 // MARK: - CatchePolicyGettable
 
-extension DeliveryService: CachePolicyGettable {
+extension SearchService: CachePolicyGettable {
     var cachePolicy: URLRequest.CachePolicy {
         switch self {
-        case .getDeliveries: return .useProtocolCachePolicy
+        case .search: return .useProtocolCachePolicy
         }
     }
 }
