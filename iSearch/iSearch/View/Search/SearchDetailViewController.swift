@@ -12,6 +12,10 @@ class SearchDetailViewController: BaseViewController {
 
     // MARK: - Properties
     
+    /// The object used in `BaseSplitViewController`.
+    /// Used for handling collapse.
+    var hasData: Bool = false
+    
     // MARK: - Functions
     // MARK: Overrides
     

@@ -15,7 +15,6 @@ class BaseTabBarController: UITabBarController {
     
     lazy var searchSplitController: BaseSplitViewController = {
         let splitViewController =  BaseSplitViewController()
-        splitViewController.delegate = self
         let masterVC = SearchMasterViewController()
         let detailVC = SearchDetailViewController()
         let masterNavController = UINavigationController(rootViewController: masterVC)
@@ -133,16 +132,5 @@ extension BaseTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
-    }
-}
-
-// MARK: - UISplitViewControllerDelegate
-
-extension BaseTabBarController: UISplitViewControllerDelegate {
-    func splitViewController(
-        _ splitViewController: UISplitViewController,
-        collapseSecondary secondaryViewController: UIViewController,
-        onto primaryViewController: UIViewController) -> Bool {
-        return true
     }
 }
