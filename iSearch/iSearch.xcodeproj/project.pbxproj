@@ -16,6 +16,7 @@
 		4064E84A243E61C100DE7384 /* iSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E849243E61C100DE7384 /* iSearchUITests.swift */; };
 		40C2346E243F70E000A5A462 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2346D243F70E000A5A462 /* SearchResult.swift */; };
 		40C23472243F725A00A5A462 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23471243F725A00A5A462 /* Result.swift */; };
+		40C23477243F778300A5A462 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23476243F778300A5A462 /* SearchService.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
 		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
@@ -67,6 +68,7 @@
 		4064E84B243E61C100DE7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C2346D243F70E000A5A462 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		40C23471243F725A00A5A462 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		40C23476243F778300A5A462 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
 		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				40C2346D243F70E000A5A462 /* SearchResult.swift */,
 				40C23471243F725A00A5A462 /* Result.swift */,
+				40C23476243F778300A5A462 /* SearchService.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				40C85A10243F572300D9B5BE /* UIViewController+iSearch.swift in Sources */,
 				40C85A0E243F53E800D9B5BE /* UIView+iSearch.swift in Sources */,
 				40C85A0A243F3C6500D9B5BE /* BaseTabBarController.swift in Sources */,
+				40C23477243F778300A5A462 /* SearchService.swift in Sources */,
 				40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */,
 				40C23472243F725A00A5A462 /* Result.swift in Sources */,
 				40C85A0C243F532D00D9B5BE /* UIColor+iSearch.swift in Sources */,
