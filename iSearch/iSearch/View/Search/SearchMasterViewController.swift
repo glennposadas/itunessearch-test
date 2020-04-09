@@ -13,11 +13,16 @@ class SearchMasterViewController: BaseViewController {
     // MARK: - Properties
     
     // MARK: - Functions
+    
+    private func setupUI() {
+        self.title = "Track List"
+    }
+    
     // MARK: Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.backgroundColor = .brown
+        self.setupUI()
     }
 }

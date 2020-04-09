@@ -11,20 +11,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    lazy var tabBarController: BaseTabBarController = {
+        return BaseTabBarController()
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let splitViewController =  BaseSplitViewController()
-        splitViewController.delegate = self
-        let masterVC = SearchMasterViewController()
-        let detailVC = SearchDetailViewController()
-        let masterNavController = UINavigationController(rootViewController: masterVC)
-        let detailNavController = UINavigationController(rootViewController: detailVC)
-        splitViewController.viewControllers = [masterNavController,detailNavController]
-        
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = splitViewController
+        self.window?.rootViewController = self.tabBarController
         self.window?.makeKeyAndVisible()
     }
 
@@ -37,13 +32,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 }
-
-// MARK: - UISplitViewControllerDelegate
-
-extension SceneDelegate: UISplitViewControllerDelegate {
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController,
-                             onto primaryViewController: UIViewController) -> Bool {
-        return true
-    }
-}
-
