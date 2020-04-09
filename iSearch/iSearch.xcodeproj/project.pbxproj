@@ -15,6 +15,9 @@
 		4064E83F243E61C100DE7384 /* iSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E83E243E61C100DE7384 /* iSearchTests.swift */; };
 		4064E84A243E61C100DE7384 /* iSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E849243E61C100DE7384 /* iSearchUITests.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
+		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
+		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
+		40C85A02243F251100D9B5BE /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */; };
 		5DEE1131EDC5C2FDF6DBA640 /* Pods_iSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1126267F3788DAFA1C62895 /* Pods_iSearchUITests.framework */; };
 		8B91FE43D0D6E794E2439F00 /* Pods_iSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89299A650AC33B55CA4B3D1 /* Pods_iSearchTests.framework */; };
 		9261035C8BAF479ED8AE4DC0 /* Pods_iSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E1AEDCAD0936EB914BFCCC /* Pods_iSearch.framework */; };
@@ -53,6 +56,9 @@
 		4064E849243E61C100DE7384 /* iSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSearchUITests.swift; sourceTree = "<group>"; };
 		4064E84B243E61C100DE7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
+		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
+		40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		545E65EAA40BD7BB9231DCBE /* Pods-iSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchUITests.release.xcconfig"; path = "Target Support Files/Pods-iSearchUITests/Pods-iSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8601A2CFCA60D4C491DBE8BB /* Pods-iSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearch.release.xcconfig"; path = "Target Support Files/Pods-iSearch/Pods-iSearch.release.xcconfig"; sourceTree = "<group>"; };
 		983636EFEDFC823EF70EDF32 /* Pods-iSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-iSearchTests/Pods-iSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		40C859F1243E6A0E00D9B5BE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				40C859FB243F24A100D9B5BE /* Core */,
 				40C859F8243F019500D9B5BE /* StubbedResponses */,
 			);
 			path = Networking;
@@ -177,6 +184,7 @@
 		40C859F2243E6A1300D9B5BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				40C859FC243F24B800D9B5BE /* Base */,
 				40C859F7243E6C9700D9B5BE /* Search */,
 			);
 			path = View;
@@ -218,6 +226,8 @@
 		40C859F7243E6C9700D9B5BE /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */,
+				40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -228,6 +238,21 @@
 				40C859F9243F01EE00D9B5BE /* SearchResut.json */,
 			);
 			path = StubbedResponses;
+			sourceTree = "<group>";
+		};
+		40C859FB243F24A100D9B5BE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		40C859FC243F24B800D9B5BE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				40C859FD243F24C400D9B5BE /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		5D08129CB7E5F03722DD49A5 /* Frameworks */ = {
@@ -462,7 +487,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
+				40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */,
 				4064E827243E61BE00DE7384 /* SceneDelegate.swift in Sources */,
+				40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */,
+				40C85A02243F251100D9B5BE /* SearchDetailViewController.swift in Sources */,
 				4064E82F243E61BE00DE7384 /* iSearch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
