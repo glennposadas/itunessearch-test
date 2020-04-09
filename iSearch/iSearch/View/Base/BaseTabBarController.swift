@@ -9,7 +9,9 @@
 import UIKit
 
 class BaseTabBarController: UITabBarController {
-
+    
+    // MARK: - Properties
+    
     lazy var splitController: BaseSplitViewController = {
         let splitViewController =  BaseSplitViewController()
         splitViewController.delegate = self
@@ -22,14 +24,45 @@ class BaseTabBarController: UITabBarController {
         return splitViewController
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    let reachability = try? Reachability()
+    
+    // MARK: - Functions
+    
+    private func setupReachability() {
+        self.reachability?.whenReachable = { reachability in
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        }
+        self.reachability?.whenUnreachable = { _ in
+            print("Not reachable")
+        }
+        
+        do {
+            try self.reachability?.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+    
+    private func setupUI() {
         self.delegate = self
         
         self.viewControllers = [
             self.splitController
         ]
+        
+    }
+    
+    // MARK: Overrides
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.setupUI()
+        self.setupReachability()
     }
 }
 
