@@ -23,6 +23,6 @@ class SearchMasterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupUI()
+        self.setupUI()        
     }
 }

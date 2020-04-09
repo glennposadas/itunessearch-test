@@ -6,13 +6,14 @@
 //  Copyright © 2020 CitusLabs. All rights reserved.
 //
 
+import SnapKit
 import UIKit
 
 class BaseTabBarController: UITabBarController {
     
     // MARK: - Properties
     
-    lazy var splitController: BaseSplitViewController = {
+    lazy var searchSplitController: BaseSplitViewController = {
         let splitViewController =  BaseSplitViewController()
         splitViewController.delegate = self
         let masterVC = SearchMasterViewController()
@@ -20,24 +21,55 @@ class BaseTabBarController: UITabBarController {
         let masterNavController = UINavigationController(rootViewController: masterVC)
         let detailNavController = UINavigationController(rootViewController: detailVC)
         splitViewController.viewControllers = [masterNavController,detailNavController]
-        splitViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        splitViewController.tabBarItem = AppTabs.tabBarItem(for: .search)
         return splitViewController
     }()
     
+    lazy var dummyController1: UIViewController = {
+        let controller = UIViewController()
+        controller.tabBarItem = AppTabs.tabBarItem(for: .recents)
+        return controller
+    }()
+    
+    lazy var dummyController2: UIViewController = {
+        let controller = UIViewController()
+        controller.tabBarItem = AppTabs.tabBarItem(for: .downloads)
+        return controller
+    }()
+    
+    lazy var dummyController3: UIViewController = {
+        let controller = UIViewController()
+        controller.tabBarItem = AppTabs.tabBarItem(for: .featured)
+        return controller
+    }()
+    
+    lazy var dummyController4: UIViewController = {
+        let controller = UIViewController()
+        controller.tabBarItem = AppTabs.tabBarItem(for: .more)
+        return controller
+    }()
+    
     let reachability = try? Reachability()
+    
+    lazy var label_InternetError: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .medium)
+        label.text = "No internet connection 😩"
+        return label
+    }()
+    
+    lazy var view_InternetError: UIView = {
+        return UIView.new(backgroundColor: .iSearchErrorRed)
+    }()
     
     // MARK: - Functions
     
     private func setupReachability() {
         self.reachability?.whenReachable = { reachability in
-            if reachability.connection == .wifi {
-                print("Reachable via WiFi")
-            } else {
-                print("Reachable via Cellular")
-            }
+            self.toggleInternetStatusView(isHidden: true)
         }
         self.reachability?.whenUnreachable = { _ in
-            print("Not reachable")
+            self.toggleInternetStatusView(isHidden: false)
         }
         
         do {
@@ -51,9 +83,27 @@ class BaseTabBarController: UITabBarController {
         self.delegate = self
         
         self.viewControllers = [
-            self.splitController
+            self.dummyController1,
+            self.dummyController2,
+            self.searchSplitController,
+            self.dummyController3,
+            self.dummyController4
         ]
         
+        self.selectedIndex = 2
+        
+        self.view_InternetError.addSubview(self.label_InternetError)
+        self.label_InternetError.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+    }
+    
+    private func toggleInternetStatusView(isHidden: Bool) {
+        print("WITH INTERNET? ---> \(isHidden)")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            UIViewController.current()?.alert(title: "TEST", okayButtonTitle: "OK", withBlock: nil)
+        }
     }
     
     // MARK: Overrides
@@ -70,7 +120,7 @@ class BaseTabBarController: UITabBarController {
 
 extension BaseTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        return true
+        return viewController is BaseSplitViewController
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
