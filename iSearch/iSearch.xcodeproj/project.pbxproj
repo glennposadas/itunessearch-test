@@ -23,6 +23,9 @@
 		40C85A08243F3B0000D9B5BE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A07243F3B0000D9B5BE /* Reachability.swift */; };
 		40C85A0A243F3C6500D9B5BE /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */; };
 		40C85A0C243F532D00D9B5BE /* UIColor+iSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A0B243F532D00D9B5BE /* UIColor+iSearch.swift */; };
+		40C85A0E243F53E800D9B5BE /* UIView+iSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A0D243F53E800D9B5BE /* UIView+iSearch.swift */; };
+		40C85A10243F572300D9B5BE /* UIViewController+iSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A0F243F572300D9B5BE /* UIViewController+iSearch.swift */; };
+		40C85A12243F5E6800D9B5BE /* AppTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A11243F5E6800D9B5BE /* AppTabs.swift */; };
 		5DEE1131EDC5C2FDF6DBA640 /* Pods_iSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1126267F3788DAFA1C62895 /* Pods_iSearchUITests.framework */; };
 		8B91FE43D0D6E794E2439F00 /* Pods_iSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89299A650AC33B55CA4B3D1 /* Pods_iSearchTests.framework */; };
 		9261035C8BAF479ED8AE4DC0 /* Pods_iSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E1AEDCAD0936EB914BFCCC /* Pods_iSearch.framework */; };
@@ -69,6 +72,9 @@
 		40C85A07243F3B0000D9B5BE /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		40C85A0B243F532D00D9B5BE /* UIColor+iSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+iSearch.swift"; sourceTree = "<group>"; };
+		40C85A0D243F53E800D9B5BE /* UIView+iSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+iSearch.swift"; sourceTree = "<group>"; };
+		40C85A0F243F572300D9B5BE /* UIViewController+iSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+iSearch.swift"; sourceTree = "<group>"; };
+		40C85A11243F5E6800D9B5BE /* AppTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabs.swift; sourceTree = "<group>"; };
 		545E65EAA40BD7BB9231DCBE /* Pods-iSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchUITests.release.xcconfig"; path = "Target Support Files/Pods-iSearchUITests/Pods-iSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8601A2CFCA60D4C491DBE8BB /* Pods-iSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearch.release.xcconfig"; path = "Target Support Files/Pods-iSearch/Pods-iSearch.release.xcconfig"; sourceTree = "<group>"; };
 		983636EFEDFC823EF70EDF32 /* Pods-iSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-iSearchTests/Pods-iSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				40C85A0B243F532D00D9B5BE /* UIColor+iSearch.swift */,
+				40C85A0D243F53E800D9B5BE /* UIView+iSearch.swift */,
+				40C85A0F243F572300D9B5BE /* UIViewController+iSearch.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				4064E824243E61BE00DE7384 /* AppDelegate.swift */,
+				40C85A11243F5E6800D9B5BE /* AppTabs.swift */,
 				4064E826243E61BE00DE7384 /* SceneDelegate.swift */,
 			);
 			path = App;
@@ -503,9 +512,12 @@
 			files = (
 				40C85A04243F2C3600D9B5BE /* BaseSplitViewController.swift in Sources */,
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
+				40C85A10243F572300D9B5BE /* UIViewController+iSearch.swift in Sources */,
+				40C85A0E243F53E800D9B5BE /* UIView+iSearch.swift in Sources */,
 				40C85A0A243F3C6500D9B5BE /* BaseTabBarController.swift in Sources */,
 				40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */,
 				40C85A0C243F532D00D9B5BE /* UIColor+iSearch.swift in Sources */,
+				40C85A12243F5E6800D9B5BE /* AppTabs.swift in Sources */,
 				4064E827243E61BE00DE7384 /* SceneDelegate.swift in Sources */,
 				40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */,
 				40C85A08243F3B0000D9B5BE /* Reachability.swift in Sources */,
