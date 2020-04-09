@@ -12,6 +12,14 @@ class BaseViewController: UIViewController {
 
     // MARK: - Properties
     
+    var backgroundColor: UIColor {
+        get {
+            self.view.backgroundColor ?? .white
+        } set {
+            self.view.backgroundColor = newValue
+        }
+    }
+    
     // MARK: - Functions
     // MARK: Overrides
     

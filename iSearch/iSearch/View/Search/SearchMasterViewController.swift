@@ -18,5 +18,6 @@ class SearchMasterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.backgroundColor = .brown
     }
 }

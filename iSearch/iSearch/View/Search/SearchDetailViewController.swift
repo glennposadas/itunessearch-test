@@ -18,5 +18,6 @@ class SearchDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.backgroundColor = .darkGray
     }
 }
