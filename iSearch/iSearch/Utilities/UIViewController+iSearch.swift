@@ -21,7 +21,7 @@ var windowRootController: UIViewController? {
         return window.windows.last?.rootViewController
     }
     
-    return nil
+    return UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
 }
 
 /// Category for any controller.
