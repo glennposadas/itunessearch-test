@@ -69,7 +69,9 @@ class BaseTabBarController: UITabBarController {
             self.toggleInternetStatusView(isHidden: true)
         }
         self.reachability?.whenUnreachable = { _ in
-            self.toggleInternetStatusView(isHidden: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                self.toggleInternetStatusView(isHidden: false)
+            }
         }
         
         do {
@@ -99,10 +101,16 @@ class BaseTabBarController: UITabBarController {
     }
     
     private func toggleInternetStatusView(isHidden: Bool) {
-        print("WITH INTERNET? ---> \(isHidden)")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            UIViewController.current()?.alert(title: "TEST", okayButtonTitle: "OK", withBlock: nil)
+        print("With internet connection? \(isHidden)")
+        if !isHidden, let topMostController = UIViewController.current() {
+            topMostController.view.addSubview(self.view_InternetError)
+            self.view_InternetError.snp.makeConstraints {
+                $0.top.equalTo(topMostController.view.safeAreaLayoutGuide.snp.top)
+                $0.leading.trailing.equalToSuperview()
+                $0.height.equalTo(30.0)
+            }
+        } else {
+            self.view_InternetError.removeFromSuperview()
         }
     }
     

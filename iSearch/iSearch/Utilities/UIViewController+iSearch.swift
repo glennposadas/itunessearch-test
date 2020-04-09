@@ -8,16 +8,20 @@
 
 import UIKit
 
-var windowScene: UIScene = {
+var windowScene: UIScene? = {
     let windowScene = UIApplication.shared
     .connectedScenes
     .filter { $0.activationState == .foregroundActive }
     .first
-    return windowScene!
+    return windowScene
 }()
 
 var windowRootController: UIViewController? {
-    (windowScene as! UIWindowScene).windows.last?.rootViewController
+    if let window = windowScene as? UIWindowScene {
+        return window.windows.last?.rootViewController
+    }
+    
+    return nil
 }
 
 /// Category for any controller.
@@ -27,6 +31,8 @@ extension UIViewController {
         
     /// Class function to get the current or top most screen.
     class func current(controller: UIViewController? = windowRootController) -> UIViewController? {
+        guard let controller = controller else { return nil }
+        
         if let navigationController = controller as? UINavigationController {
             return current(controller: navigationController.visibleViewController)
         }
@@ -35,7 +41,7 @@ extension UIViewController {
                 return current(controller: selected)
             }
         }
-        if let presented = controller?.presentedViewController {
+        if let presented = controller.presentedViewController {
             return current(controller: presented)
         }
         return controller
