@@ -8,10 +8,18 @@
 
 import Moya
 
+/**
+ Protocol to be used by Networking Services.
+ */
 protocol CachePolicyGettable {
     var cachePolicy: URLRequest.CachePolicy { get }
 }
 
+/**
+ Cache policy plugin to be used by Networking Service Provider.
+ # Example
+    -  `let provider = MoyaProvider<Service>(plugins: [CachePolicyPlugin()])`
+ */
 final class CachePolicyPlugin: PluginType {
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         if let cachePolicyGettable = target as? CachePolicyGettable {
