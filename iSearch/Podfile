@@ -11,6 +11,8 @@ end
 target 'iSearch' do
     pod 'Kingfisher',                 '~> 5.9.0'              # Loading of url image into imageViews
     pod 'Moya',                       '~> 13.0.0'             # Networking Abstraction Layer
+    pod 'RxSwift',                    '~> 5.0.1'              # Reactive/Functional Programming Framework
+    pod 'RxCocoa',                    '~> 5.0.1'              # Reactive/Functional Programming Framework
     pod 'SnapKit',                    '~> 5.0.1'              # Constraint Programmatically.
     pod 'SVProgressHUD',              '~> 2.2.5'              # HUD Loader
     pod 'SwiftDate',                  '~> 6.1.0'              # Dates Handler

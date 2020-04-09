@@ -231,6 +231,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		40C23483243FA38F00A5A462 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		40C859F1243E6A0E00D9B5BE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +298,7 @@
 		40C859F7243E6C9700D9B5BE /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				40C23483243FA38F00A5A462 /* Cell */,
 				40C2347E243F986000A5A462 /* ViewModel */,
 				40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */,
 				40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */,
