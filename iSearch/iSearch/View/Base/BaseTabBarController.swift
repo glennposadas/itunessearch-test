@@ -54,11 +54,12 @@ class BaseTabBarController: UITabBarController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12.0, weight: .medium)
         label.text = "No internet connection 😩"
+        label.textColor = .white
         return label
     }()
     
     lazy var view_InternetError: UIView = {
-        return UIView.new(backgroundColor: .iSearchErrorRed)
+        return UIView.new(backgroundColor: .iSearchErrorRed, alpha: 0)
     }()
     
     // MARK: - Functions
@@ -108,6 +109,11 @@ class BaseTabBarController: UITabBarController {
                 $0.leading.trailing.equalToSuperview()
                 $0.height.equalTo(30.0)
             }
+            
+            UIView.animate(withDuration: 0.5) {
+                self.view_InternetError.alpha = 1.0
+            }
+            
         } else {
             self.view_InternetError.removeFromSuperview()
         }
