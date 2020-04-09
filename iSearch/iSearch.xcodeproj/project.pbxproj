@@ -19,6 +19,9 @@
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
 		40C85A02243F251100D9B5BE /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */; };
 		40C85A04243F2C3600D9B5BE /* BaseSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A03243F2C3600D9B5BE /* BaseSplitViewController.swift */; };
+		40C85A06243F2EBC00D9B5BE /* CachePolicyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A05243F2EBC00D9B5BE /* CachePolicyPlugin.swift */; };
+		40C85A08243F3B0000D9B5BE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A07243F3B0000D9B5BE /* Reachability.swift */; };
+		40C85A0A243F3C6500D9B5BE /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */; };
 		5DEE1131EDC5C2FDF6DBA640 /* Pods_iSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1126267F3788DAFA1C62895 /* Pods_iSearchUITests.framework */; };
 		8B91FE43D0D6E794E2439F00 /* Pods_iSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89299A650AC33B55CA4B3D1 /* Pods_iSearchTests.framework */; };
 		9261035C8BAF479ED8AE4DC0 /* Pods_iSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E1AEDCAD0936EB914BFCCC /* Pods_iSearch.framework */; };
@@ -61,6 +64,9 @@
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
 		40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		40C85A03243F2C3600D9B5BE /* BaseSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSplitViewController.swift; sourceTree = "<group>"; };
+		40C85A05243F2EBC00D9B5BE /* CachePolicyPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicyPlugin.swift; sourceTree = "<group>"; };
+		40C85A07243F3B0000D9B5BE /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		545E65EAA40BD7BB9231DCBE /* Pods-iSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchUITests.release.xcconfig"; path = "Target Support Files/Pods-iSearchUITests/Pods-iSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8601A2CFCA60D4C491DBE8BB /* Pods-iSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearch.release.xcconfig"; path = "Target Support Files/Pods-iSearch/Pods-iSearch.release.xcconfig"; sourceTree = "<group>"; };
 		983636EFEDFC823EF70EDF32 /* Pods-iSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-iSearchTests/Pods-iSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +251,8 @@
 		40C859FB243F24A100D9B5BE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				40C85A05243F2EBC00D9B5BE /* CachePolicyPlugin.swift */,
+				40C85A07243F3B0000D9B5BE /* Reachability.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -254,6 +262,7 @@
 			children = (
 				40C859FD243F24C400D9B5BE /* BaseViewController.swift */,
 				40C85A03243F2C3600D9B5BE /* BaseSplitViewController.swift */,
+				40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -491,9 +500,12 @@
 			files = (
 				40C85A04243F2C3600D9B5BE /* BaseSplitViewController.swift in Sources */,
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
+				40C85A0A243F3C6500D9B5BE /* BaseTabBarController.swift in Sources */,
 				40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */,
 				4064E827243E61BE00DE7384 /* SceneDelegate.swift in Sources */,
 				40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */,
+				40C85A08243F3B0000D9B5BE /* Reachability.swift in Sources */,
+				40C85A06243F2EBC00D9B5BE /* CachePolicyPlugin.swift in Sources */,
 				40C85A02243F251100D9B5BE /* SearchDetailViewController.swift in Sources */,
 				4064E82F243E61BE00DE7384 /* iSearch.xcdatamodeld in Sources */,
 			);
