@@ -22,6 +22,7 @@
 		40C2347D243F89E100A5A462 /* TrustPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2347C243F89E100A5A462 /* TrustPolicyManager.swift */; };
 		40C23480243F997700A5A462 /* SearchMasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2347F243F997700A5A462 /* SearchMasterViewModel.swift */; };
 		40C23482243F998100A5A462 /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23481243F998100A5A462 /* SearchDetailViewModel.swift */; };
+		40C23485243FA56600A5A462 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23484243FA56600A5A462 /* BaseTableViewCell.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
 		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
@@ -79,6 +80,7 @@
 		40C2347C243F89E100A5A462 /* TrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustPolicyManager.swift; sourceTree = "<group>"; };
 		40C2347F243F997700A5A462 /* SearchMasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewModel.swift; sourceTree = "<group>"; };
 		40C23481243F998100A5A462 /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
+		40C23484243FA56600A5A462 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
 		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 		40C859FC243F24B800D9B5BE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				40C23484243FA56600A5A462 /* BaseTableViewCell.swift */,
 				40C859FD243F24C400D9B5BE /* BaseViewController.swift */,
 				40C85A03243F2C3600D9B5BE /* BaseSplitViewController.swift */,
 				40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */,
@@ -586,6 +589,7 @@
 				40C85A08243F3B0000D9B5BE /* Reachability.swift in Sources */,
 				40C85A06243F2EBC00D9B5BE /* CachePolicyPlugin.swift in Sources */,
 				40C85A02243F251100D9B5BE /* SearchDetailViewController.swift in Sources */,
+				40C23485243FA56600A5A462 /* BaseTableViewCell.swift in Sources */,
 				40C2347B243F896A00A5A462 /* CoreService.swift in Sources */,
 				4064E82F243E61BE00DE7384 /* iSearch.xcdatamodeld in Sources */,
 			);
