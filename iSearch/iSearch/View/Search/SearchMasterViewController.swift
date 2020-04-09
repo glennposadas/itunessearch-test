@@ -12,6 +12,8 @@ class SearchMasterViewController: BaseViewController {
 
     // MARK: - Properties
     
+    
+    
     // MARK: - Functions
     
     private func setupUI() {

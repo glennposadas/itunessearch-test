@@ -20,6 +20,8 @@
 		40C23479243F77BF00A5A462 /* AppEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23478243F77BF00A5A462 /* AppEnv.swift */; };
 		40C2347B243F896A00A5A462 /* CoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2347A243F896A00A5A462 /* CoreService.swift */; };
 		40C2347D243F89E100A5A462 /* TrustPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2347C243F89E100A5A462 /* TrustPolicyManager.swift */; };
+		40C23480243F997700A5A462 /* SearchMasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2347F243F997700A5A462 /* SearchMasterViewModel.swift */; };
+		40C23482243F998100A5A462 /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23481243F998100A5A462 /* SearchDetailViewModel.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
 		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
@@ -75,6 +77,8 @@
 		40C23478243F77BF00A5A462 /* AppEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnv.swift; sourceTree = "<group>"; };
 		40C2347A243F896A00A5A462 /* CoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreService.swift; sourceTree = "<group>"; };
 		40C2347C243F89E100A5A462 /* TrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustPolicyManager.swift; sourceTree = "<group>"; };
+		40C2347F243F997700A5A462 /* SearchMasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewModel.swift; sourceTree = "<group>"; };
+		40C23481243F998100A5A462 /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
 		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,15 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		40C2347E243F986000A5A462 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				40C2347F243F997700A5A462 /* SearchMasterViewModel.swift */,
+				40C23481243F998100A5A462 /* SearchDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		40C859F1243E6A0E00D9B5BE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +291,7 @@
 		40C859F7243E6C9700D9B5BE /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				40C2347E243F986000A5A462 /* ViewModel */,
 				40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */,
 				40C85A01243F251100D9B5BE /* SearchDetailViewController.swift */,
 			);
@@ -545,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C85A04243F2C3600D9B5BE /* BaseSplitViewController.swift in Sources */,
+				40C23482243F998100A5A462 /* SearchDetailViewModel.swift in Sources */,
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
 				40C85A10243F572300D9B5BE /* UIViewController+iSearch.swift in Sources */,
 				40C85A0E243F53E800D9B5BE /* UIView+iSearch.swift in Sources */,
@@ -558,6 +573,7 @@
 				40C2346E243F70E000A5A462 /* SearchResult.swift in Sources */,
 				40C85A12243F5E6800D9B5BE /* AppTabs.swift in Sources */,
 				4064E827243E61BE00DE7384 /* SceneDelegate.swift in Sources */,
+				40C23480243F997700A5A462 /* SearchMasterViewModel.swift in Sources */,
 				40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */,
 				40C85A08243F3B0000D9B5BE /* Reachability.swift in Sources */,
 				40C85A06243F2EBC00D9B5BE /* CachePolicyPlugin.swift in Sources */,
