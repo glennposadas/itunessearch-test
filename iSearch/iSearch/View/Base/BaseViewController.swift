@@ -26,7 +26,12 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.backgroundColor = .white
+        self.backgroundColor = .backgroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            .font: UIFont.boldSystemFont(ofSize: 34.0),
+            .foregroundColor: UIColor.textColor
+        ]
     }
 }

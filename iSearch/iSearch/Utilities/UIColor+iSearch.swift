@@ -12,6 +12,10 @@ extension UIColor {
 
     /// Color mainly used for error internet notifier
     static let iSearchErrorRed: UIColor = UIColor.colorWithRGBHex(0xff3f34)
+    /// Color used for texts to support dark mode, such as large title
+    static let textColor: UIColor = UIColor(named: "TextColor")!
+    /// Color used for background of views.
+    static let backgroundColor: UIColor = UIColor(named: "BackgroundColor")!
     
     /// Hex to UIColor.
     class func colorWithRGBHex(_ hex: Int, alpha: Float = 1.0) -> UIColor {
