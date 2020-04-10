@@ -66,11 +66,3 @@ extension SearchService: CachePolicyGettable {
         }
     }
 }
-
-
-
-
-
-
-
-

@@ -16,7 +16,8 @@ class TrustPolicyManager : ServerTrustPolicyManager {
     override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
         return .disableEvaluation
     }
-    public init() {
+    
+    init() {
         super.init(policies: [:])
     }
 }

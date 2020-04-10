@@ -61,5 +61,4 @@ extension UIView {
         self.layer.shadowRadius     = shadowRadius
         self.clipsToBounds = shouldClipToBounds
     }
-    
 }

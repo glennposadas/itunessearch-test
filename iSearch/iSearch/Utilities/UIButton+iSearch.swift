@@ -34,7 +34,6 @@ extension UIButton {
         self.setAttributedTitle(normalAttrib, for: .normal)
         self.contentHorizontalAlignment = horizontalAlignment
         self.contentVerticalAlignment = .center
-        self.backgroundColor = backgroundColor
-        
+        self.backgroundColor = backgroundColor   
     }
 }

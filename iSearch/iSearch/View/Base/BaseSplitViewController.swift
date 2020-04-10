@@ -45,5 +45,4 @@ extension BaseSplitViewController: UISplitViewControllerDelegate {
         
         return false
     }
-
 }

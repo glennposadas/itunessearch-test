@@ -46,6 +46,5 @@ struct CoreService {
         let path = bundle.path(forResource: filename, ofType: "json")
         return (try? Data(contentsOf: URL(fileURLWithPath: path!)))
     }
-
 }
 
