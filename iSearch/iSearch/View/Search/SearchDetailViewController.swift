@@ -26,7 +26,6 @@ class SearchDetailViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
     private var viewModel: SearchDetailViewModel!
-    private let disposeBag = DisposeBag()
     
     private lazy var imageView_Artwork: UIImageView = {
         return UIImageView(image: UIImage(named: "ic_placeholder"))

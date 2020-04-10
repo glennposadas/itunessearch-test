@@ -90,6 +90,32 @@ extension Result {
         }
     }
     
+    /// Presentable content advisory rating
+    var contentAdvisoryRatingPresentable: String {
+        return self.contentAdvisoryRating ?? "No Rating"
+    }
+    
+    /// Presentable long description of the track.
+    var longDescriptionPresentable: String {
+        return self.longDescription ?? ""
+    }
+    
+    /// The presentable genre
+    var genrePresentable: String {
+        return self.primaryGenreName ?? ""
+    }
+    
+    /// The formatted year date used in `SearchDetailsViewModel`.
+    var yearPresentable: String {
+        get {
+            let releaseDate = (self.releaseDate ?? "").toDate()
+            let format = "yyyy"
+            let formattedDate = releaseDate?.toFormat(format)
+            return formattedDate ?? "Release Date Unavailable"
+        }
+    }
+    
+    /// The formatted presentable date
     var datePresentable: String {
         get {
             let releaseDate = (self.releaseDate ?? "").toDate()

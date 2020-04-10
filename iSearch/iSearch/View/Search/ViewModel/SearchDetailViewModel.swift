@@ -33,11 +33,25 @@ class SearchDetailViewModel: BaseViewModel {
     var contentRatingPresentable = BehaviorRelay<String>(value: "")
     
     // MARK: - Functions
+    
+    private func loadData() {
+        guard let data = self.selectedResult else { return }
+        
+        let genreDatePresentable = "\(data.genrePresentable) • \(data.yearPresentable)"
+        
+        self.artworkResource.accept(data.artworkResource)
+        self.trackTitlePresentable.accept(data.titlePresentable)
+        self.genreDatePresentable.accept(genreDatePresentable)
+        self.aboutPresentable.accept(data.longDescriptionPresentable)
+        self.contentRatingPresentable.accept(data.contentAdvisoryRatingPresentable)
+    }
+    
     // MARK: Overrides
     
     init(searchDetailController: SearchDetailDelegate?, selectedResult: Result?) {
         super.init()
         self.selectedResult = selectedResult
+        self.loadData()
     }
     
     /// A controller lifecycle method
