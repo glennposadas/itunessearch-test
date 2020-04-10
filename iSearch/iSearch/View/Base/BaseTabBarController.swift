@@ -101,7 +101,6 @@ class BaseTabBarController: UITabBarController {
     }
     
     private func toggleInternetStatusView(isHidden: Bool) {
-        print("With internet connection? \(isHidden)")
         if !isHidden, let topMostController = UIViewController.current() {
             topMostController.view.addSubview(self.view_InternetError)
             self.view_InternetError.snp.makeConstraints {

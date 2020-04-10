@@ -59,14 +59,16 @@ class SearchMasterViewController: BaseViewController {
         }
         .filter { $0 == true }
         .subscribe(onNext: { _ in
-            weakSelf?.refreshControl.endRefreshing()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                weakSelf?.refreshControl.endRefreshing()
+            }
         }).disposed(by: self.disposeBag)
     }
     
     // MARK: Overrides
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
         
         self.viewModel = SearchMasterViewModel(searchMasterController: self)
         self.setupUI()
