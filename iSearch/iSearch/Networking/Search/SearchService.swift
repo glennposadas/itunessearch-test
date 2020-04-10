@@ -36,7 +36,7 @@ extension SearchService: TargetType {
     }
     
     var sampleData: Data {
-        return CoreService.stubbedResponse("SearchResut")
+        return CoreService.stubbedResponse("SearchResult")
     }
     
     var task: Task {

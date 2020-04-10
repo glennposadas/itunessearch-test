@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIColor {
-
     /// Color mainly used for error internet notifier
     static let iSearchErrorRed: UIColor = UIColor.colorWithRGBHex(0xff3f34)
     /// Color used for texts to support dark mode, such as large title

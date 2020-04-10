@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     
     var backgroundColor: UIColor {
         get {
-            self.view.backgroundColor ?? .white
+            self.view.backgroundColor ?? .backgroundColor
         } set {
             self.view.backgroundColor = newValue
         }
@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
     
     lazy var tableView: BaseTableView = {
         let tableView = BaseTableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .clear
         return tableView
     }()
 
@@ -69,8 +69,7 @@ class BaseViewController: UIViewController {
 
         self.layoutActivityIndicator()
         
-        self.backgroundColor = .backgroundColor
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .automatic
         
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
             .font: UIFont.boldSystemFont(ofSize: 34.0),

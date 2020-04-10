@@ -87,6 +87,10 @@ class DataTableViewCell: BaseTableViewCell {
         return GetButton(type: .custom)
     }()
     
+    private lazy var imageView_DisclosureIcon: UIImageView = {
+        return UIImageView(image: UIImage.disclo)
+    }()
+    
     private var cellType: DataCellType!
     
     // MARK: - Functions
