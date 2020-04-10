@@ -10,7 +10,7 @@ import Foundation
 
 /// The class that has multiple class functions for handling defaults.
 /// Also has the helper class functions for handling auth tokens.
-class LLFDefaults {
+class AppDefaults {
     
     // MARK: - Functions
     

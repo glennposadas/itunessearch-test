@@ -6,7 +6,7 @@
 //  Copyright © 2020 CitusLabs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  Holds the configuration of the whole app.
@@ -15,6 +15,9 @@ import Foundation
 struct AppConfig {
     
     // MARK: - Properties
+    
+    static let screenWidth = UIScreen.main.bounds.width
+    static let screenHeight = UIScreen.main.bounds.height
     
     static var country: String {
         get {
