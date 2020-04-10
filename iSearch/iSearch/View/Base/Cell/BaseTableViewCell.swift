@@ -54,7 +54,7 @@ class BaseTableViewCell: UITableViewCell {
             initialSpringVelocity: 5,
             animations: {
                 let value: CGFloat = self.isHighlighted ? 0.95 : 1.0
-                _ = self.subviews.map { $0.transform = CGAffineTransform(scaleX: value, y: value) }
+                self.contentView.transform = CGAffineTransform(scaleX: value, y: value)
         }, completion: nil)
     }
 }
