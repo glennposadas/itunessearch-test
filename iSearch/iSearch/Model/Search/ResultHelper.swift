@@ -126,13 +126,31 @@ extension Result {
         }
     }
     
-    /// Get button title presentable
+    /// Get button title presentable for the data cell.
     var getButtonTitlePresentable: String {
         get {
             switch self.cellType {
             case .long: return "GET"
             case .short: return self.trackPricePresentable
             }
+        }
+    }
+    
+    /// Presentable button title for rent
+    var rentButtonTitlePresentable: String {
+        get {
+            let rentPrice = self.trackRentalPrice ?? 0.00
+            let rentPriceString = String(format:"%.2f", rentPrice)
+            return "\(self.currencySymbol) \(rentPriceString)"
+        }
+    }
+    
+    /// Presentable button title for buy
+    var buyButtonTitlePresentable: String {
+        get {
+            let buyPrice = self.trackPrice ?? 0.00
+            let buyPriceString = String(format:"%.2f", buyPrice)
+            return "\(self.currencySymbol) \(buyPriceString)"
         }
     }
     
