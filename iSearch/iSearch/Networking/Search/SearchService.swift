@@ -8,7 +8,12 @@
 
 import Moya
 
-let searchProvider = MoyaProvider<SearchService>(plugins: [CachePolicyPlugin()])
+/// The live provider for `SearchService`. Must not be used directly! Use `searchProvider` instead.
+let searchLiveProvider = MoyaProvider<SearchService>(plugins: [CachePolicyPlugin()])
+/// The stubbing provider for `SearchService`. Must not be used directly!
+let searchStubbingProvider = MoyaProvider<SearchService>(stubClosure: MoyaProvider.immediatelyStub)
+/// The final provider for `SearchService.`
+let searchProvider: MoyaProvider<SearchService> = AppEnv.currentEnv == .unitUITest ? searchStubbingProvider : searchLiveProvider
 
 enum SearchService {
     /// Search for tracks.
