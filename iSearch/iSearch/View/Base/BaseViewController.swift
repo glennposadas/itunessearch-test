@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
             .foregroundColor : UIColor.textColor,
             .font: UIFont.systemFont(ofSize: 14.0)
         ]
-        refreshControl.attributedTitle = NSAttributedString(string: "Please wait...", attributes: attributes)
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attributes)
         return refreshControl
     }()
 

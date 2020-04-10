@@ -32,7 +32,10 @@ class SearchMasterViewController: BaseViewController {
     }
     
     private func setupUI() {
+        weak var weakSelf = self
+        
         self.title = "Track List"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.view.addSubview(self.tableView)
@@ -41,6 +44,24 @@ class SearchMasterViewController: BaseViewController {
         }
         
         self.addPullToRefreshControl(to: self.tableView)
+        
+        self.refreshControl.rx.controlEvent(.valueChanged)
+            .map { _ in
+                weakSelf?.refreshControl.isRefreshing == false
+        }
+        .filter { $0 == false }
+        .subscribe(onNext: { _ in
+            weakSelf?.viewModel.refresh()
+        }).disposed(by: self.disposeBag)
+        
+        self.refreshControl.rx.controlEvent(.valueChanged)
+            .map { _ in
+                weakSelf?.refreshControl.isRefreshing == true
+        }
+        .filter { $0 == true }
+        .subscribe(onNext: { _ in
+            weakSelf?.refreshControl.endRefreshing()
+        }).disposed(by: self.disposeBag)
     }
     
     // MARK: Overrides

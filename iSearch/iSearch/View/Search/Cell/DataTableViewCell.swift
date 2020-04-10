@@ -88,7 +88,10 @@ class DataTableViewCell: BaseTableViewCell {
     }()
     
     private lazy var imageView_DisclosureIcon: UIImageView = {
-        return UIImageView(image: UIImage(named: "ic_chevron_right")?.withTintColor(.textColor))
+        return UIImageView(image:
+            UIImage(named: "ic_chevron_right")?
+                .withTintColor(UIColor.textColor
+                    .withAlphaComponent(0.7)))
     }()
     
     private var cellType: DataCellType!
@@ -145,8 +148,8 @@ class DataTableViewCell: BaseTableViewCell {
         self.imageView_Artwork.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(8.0)
             $0.leading.equalToSuperview().inset(16.0)
-            self.constraint_ArtworkWidth = $0.width.equalTo(50.0).constraint
-            self.constraint_ArtworkHeight = $0.height.equalTo(50.0).constraint
+            self.constraint_ArtworkWidth = $0.width.equalTo(60.0).constraint
+            self.constraint_ArtworkHeight = $0.height.equalTo(90.0).constraint
         }
         
         self.contentView.addSubview(self.button_Get)
@@ -159,8 +162,8 @@ class DataTableViewCell: BaseTableViewCell {
         
         self.contentView.addSubview(self.imageView_DisclosureIcon)
         self.imageView_DisclosureIcon.snp.makeConstraints {
-            $0.width.equalTo(20.0)
-            $0.height.equalTo(30.0)
+            $0.width.equalTo(15.0)
+            $0.height.equalTo(15.0)
             $0.trailing.centerY.equalTo(self.button_Get)
         }
         
@@ -173,7 +176,6 @@ class DataTableViewCell: BaseTableViewCell {
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
         self.setHighlightedAnimation()
     }
     

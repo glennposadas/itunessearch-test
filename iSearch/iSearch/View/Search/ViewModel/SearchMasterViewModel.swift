@@ -23,6 +23,7 @@ class SearchMasterViewModel: BaseViewModel {
     // MARK: - Properties
     
     private var mediaType = "movie"
+    private var searchTerm = "star"
     private weak var delegate: SearchMasterDelegate?
     
     private var searchResult: SearchResult?
@@ -35,6 +36,11 @@ class SearchMasterViewModel: BaseViewModel {
     var tableViewIsHidden = BehaviorRelay<Bool>(value: true)
     
     // MARK: - Functions
+    
+    /// Function to re-do searching. Called by the refresh control
+    func refresh() {
+        self.search(self.searchTerm, country: AppConfig.country, media: self.mediaType)
+    }
     
     /// Do searching... call `SearchService`.
     private func search(_ term: String, country: String, media: String) {
@@ -69,7 +75,7 @@ class SearchMasterViewModel: BaseViewModel {
         super.init()
         
         self.delegate = searchMasterController
-        self.search("star", country: AppConfig.country, media: self.mediaType)
+        self.search(self.searchTerm, country: AppConfig.country, media: self.mediaType)
     }
 }
 
