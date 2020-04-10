@@ -65,7 +65,7 @@ extension Result {
     /// The trackname presentable
     var titlePresentable: String {
         get {
-            return self.trackName ?? ""
+            return self.trackName ?? self.collectionName ?? ""
         }
     }
     
