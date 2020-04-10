@@ -90,9 +90,10 @@ extension Result {
         }
     }
     
-    /// Presentable content advisory rating
+    /// Presentable content advisory rating.
+    /// Add leading trailing spaces for margin
     var contentAdvisoryRatingPresentable: String {
-        return self.contentAdvisoryRating ?? "No Rating"
+        return " \(self.contentAdvisoryRating ?? "No Rating") "
     }
     
     /// Presentable long description of the track.

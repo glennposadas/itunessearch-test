@@ -22,10 +22,13 @@ class BaseSplitViewController: UISplitViewController {
     override func loadView() {
         super.loadView()
         
-        self.maximumPrimaryColumnWidth = AppConfig.screenWidth * 0.50
-        self.minimumPrimaryColumnWidth = AppConfig.screenWidth * 0.40
         self.preferredDisplayMode = .allVisible
         self.delegate = self
+        
+        if AppConfig.IS_IPAD {
+            self.maximumPrimaryColumnWidth = AppConfig.screenWidth * 0.50
+            self.minimumPrimaryColumnWidth = AppConfig.screenWidth * 0.40
+        }
     }
 }
 

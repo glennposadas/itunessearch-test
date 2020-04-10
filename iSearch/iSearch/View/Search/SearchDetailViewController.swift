@@ -42,16 +42,23 @@ class SearchDetailViewController: BaseViewController {
     private lazy var label_GenreDate: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         label.alpha = 0.8
-        label.numberOfLines = 0
         return label
     }()
     
-    private lazy var label_About: UILabel = {
+    private lazy var label_AboutTitle: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
         label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.text = "About the Movie"
+        return label
+    }()
+    
+    private lazy var label_AboutValue: UILabel = {
+        let label = UILabel()
+        label.textColor = .textColor
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         label.alpha = 0.8
         label.numberOfLines = 0
         return label
@@ -61,7 +68,7 @@ class SearchDetailViewController: BaseViewController {
         let label = UILabel()
         label.textColor = .textColor
         label.font = UIFont.systemFont(ofSize: 10.0, weight: .regular)
-        label.setupLayer(cornerRadius: 0, borderWidth: 1.0, borderColor: .white)
+        label.setupLayer(cornerRadius: 0, borderWidth: 1.0, borderColor: .textColor)
         return label
     }()
     
@@ -71,6 +78,10 @@ class SearchDetailViewController: BaseViewController {
     
     private lazy var button_Rent: GetButton = {
         return GetButton(type: .custom)
+    }()
+    
+    private lazy var view_Separator: UIView = {
+        return UIView.new(backgroundColor: .systemGray3)
     }()
     
     // MARK: - Functions
@@ -84,7 +95,7 @@ class SearchDetailViewController: BaseViewController {
                 with: resource,
                 placeholder: placeholder) { (result) in
                     switch result {
-                    case .failure: self.imageView_Artwork.image = placeholder
+                    case .failure: weakSelf?.imageView_Artwork.image = placeholder
                     default: break
                     }
             }
@@ -99,7 +110,7 @@ class SearchDetailViewController: BaseViewController {
             .disposed(by: self.disposeBag)
         
         self.viewModel.aboutPresentable
-            .bind(to: self.label_About.rx.text)
+            .bind(to: self.label_AboutValue.rx.text)
             .disposed(by: self.disposeBag)
         
         self.viewModel.contentRatingPresentable
@@ -114,13 +125,17 @@ class SearchDetailViewController: BaseViewController {
                 self.imageView_Artwork,
                 self.label_Title,
                 self.label_ContentRating,
-                self.label_GenreDate
+                self.label_GenreDate,
+                self.view_Separator,
+                self.label_AboutTitle,
+                self.label_AboutValue
             )
             
             self.imageView_Artwork.snp.makeConstraints {
-                $0.top.leading.equalToSuperview().inset(16.0)
-                $0.width.equalTo(130.0)
-                $0.height.equalTo(250.0)
+                $0.top.equalToSuperview().inset(8.0)
+                $0.leading.equalToSuperview().inset(16.0)
+                $0.width.equalTo(150.0)
+                $0.height.equalTo(220.0)
             }
             
             self.label_Title.snp.makeConstraints {
@@ -129,14 +144,33 @@ class SearchDetailViewController: BaseViewController {
                 $0.trailing.equalToSuperview().inset(16.0)
             }
             
-            self.label_GenreDate.snp.makeConstraints {
+            self.label_ContentRating.snp.makeConstraints {
                 $0.top.equalTo(self.label_Title.snp.bottom)
                 $0.leading.equalTo(self.label_Title)
             }
             
             self.label_GenreDate.snp.makeConstraints {
-                $0.top.equalTo(self.label_GenreDate.snp.bottom).offset(8.0)
+                $0.top.equalTo(self.label_ContentRating.snp.bottom).offset(8.0)
+                $0.height.equalTo(20.0)
                 $0.leading.equalTo(self.label_Title)
+            }
+            
+            self.view_Separator.snp.makeConstraints {
+                $0.height.equalTo(1.0)
+                $0.top.equalTo(self.imageView_Artwork.snp.bottom).offset(16.0)
+                $0.leading.equalToSuperview().inset(16.0)
+                $0.trailing.equalToSuperview()
+            }
+            
+            self.label_AboutTitle.snp.makeConstraints {
+                $0.top.equalTo(self.view_Separator.snp.bottom).offset(8.0)
+                $0.leading.trailing.equalToSuperview().inset(16.0)
+            }
+            
+            self.label_AboutValue.snp.makeConstraints {
+                $0.top.equalTo(self.label_AboutTitle.snp.bottom).offset(8.0)
+                $0.leading.trailing.equalTo(self.label_AboutTitle)
+                $0.bottom.equalToSuperview().inset(50.0)
             }
         }
     }
@@ -163,6 +197,12 @@ class SearchDetailViewController: BaseViewController {
         
         self.setupUI()
         self.setupBindings()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
     override func viewWillDisappear(_ animated: Bool) {

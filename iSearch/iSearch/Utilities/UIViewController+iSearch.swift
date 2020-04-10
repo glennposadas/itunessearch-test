@@ -60,18 +60,12 @@ extension UIViewController {
         aView.addSubview(baseVC.scrollView)
         baseVC.scrollView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
-            
-            if #available(iOS 11.0, *) {
-                if shouldExtendToTopEdge {
-                    topConstraint = $0.top.equalToSuperview().constraint
-                } else {
-                    // Can be a one liner, but this is just an experiment.
-                    // We could use `constraintToTop`.
-                    topConstraint = $0.top.equalToSuperview().inset(64.0).constraint
-                }
-
-            } else {
+            if shouldExtendToTopEdge {
                 topConstraint = $0.top.equalToSuperview().constraint
+            } else {
+                // Can be a one liner, but this is just an experiment.
+                // We could use `constraintToTop`.
+                topConstraint = $0.top.equalToSuperview().inset(64.0).constraint
             }
         }
         
@@ -80,7 +74,7 @@ extension UIViewController {
         baseVC.scrollView.addSubview(baseVC.contentView)
         baseVC.contentView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.width.equalTo(AppConfig.screenWidth)
+            $0.width.equalTo(baseVC.view.bounds.width)
         }
         
         // Now let the controller add its subviews in this block

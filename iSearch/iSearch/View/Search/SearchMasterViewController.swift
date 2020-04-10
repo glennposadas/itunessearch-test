@@ -74,6 +74,12 @@ class SearchMasterViewController: BaseViewController {
         self.setupUI()
         self.setupBindings()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.largeTitleDisplayMode = .automatic
+    }
 }
 
 // MARK: - SearchMasterDelegate

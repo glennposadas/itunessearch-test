@@ -24,8 +24,10 @@ struct AppConfig {
             return "au"
         }
     }
+    
+    static let IS_IPAD = UIDevice.current.userInterfaceIdiom == .pad
+    static let IS_IPHONE = UIDevice.current.userInterfaceIdiom == .phone
 
     // MARK: - Functions
-    // MARK: Overrides
 
 }

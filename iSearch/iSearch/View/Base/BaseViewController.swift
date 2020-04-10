@@ -35,7 +35,8 @@ class BaseViewController: UIViewController {
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
-        scrollView.showsVerticalScrollIndicator = false
+        scrollView.alwaysBounceVertical = true
+        scrollView.showsVerticalScrollIndicator = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.keyboardDismissMode = .interactive
         return scrollView
@@ -106,8 +107,6 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.largeTitleDisplayMode = .automatic
         
         self.backgroundColor = .backgroundColor
         self.layoutActivityIndicator()
