@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ The controller for Search detail screen.
+ */
 class SearchDetailViewController: BaseViewController {
 
     // MARK: - Properties
