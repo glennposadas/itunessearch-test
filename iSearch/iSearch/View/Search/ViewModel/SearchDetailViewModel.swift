@@ -22,6 +22,7 @@ class SearchDetailViewModel: BaseViewModel {
     
     // MARK: - Functions
     // MARK: Overrides
+    
     init(searchDetailController: SearchDetailDelegate?) {
         
     }
