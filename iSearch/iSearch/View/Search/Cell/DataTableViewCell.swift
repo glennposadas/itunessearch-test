@@ -88,7 +88,7 @@ class DataTableViewCell: BaseTableViewCell {
     }()
     
     private lazy var imageView_DisclosureIcon: UIImageView = {
-        return UIImageView(image: UIImage.disclo)
+        return UIImageView(image: UIImage(named: "ic_chevron_right")?.withTintColor(.textColor))
     }()
     
     private var cellType: DataCellType!
@@ -100,6 +100,7 @@ class DataTableViewCell: BaseTableViewCell {
         
         self.label_Date.isHidden = data.dateLabelIsHidden
         self.button_Get.isHidden = data.getButtonIsHidden
+        self.imageView_DisclosureIcon.isHidden = !data.getButtonIsHidden
         
         self.imageView_Artwork.kf.setImage(with: data.artworkResource)
         self.label_Title.text = data.titlePresentable
@@ -154,6 +155,13 @@ class DataTableViewCell: BaseTableViewCell {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(16.0)
             self.constraint_ButtonWidth = $0.width.equalTo(60.0).constraint
+        }
+        
+        self.contentView.addSubview(self.imageView_DisclosureIcon)
+        self.imageView_DisclosureIcon.snp.makeConstraints {
+            $0.width.equalTo(20.0)
+            $0.height.equalTo(30.0)
+            $0.trailing.centerY.equalTo(self.button_Get)
         }
         
         self.contentView.addSubview(self.stackView_Labels)
