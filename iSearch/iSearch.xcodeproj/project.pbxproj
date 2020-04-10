@@ -30,6 +30,7 @@
 		40C2349124405D0900A5A462 /* UIButton+iSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2349024405D0900A5A462 /* UIButton+iSearch.swift */; };
 		40C2349324405D4B00A5A462 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2349224405D4B00A5A462 /* BaseButton.swift */; };
 		40C2349524405D9500A5A462 /* GetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2349424405D9500A5A462 /* GetButton.swift */; };
+		40C234972440677B00A5A462 /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C234962440677B00A5A462 /* ResultHelper.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
 		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
@@ -95,6 +96,7 @@
 		40C2349024405D0900A5A462 /* UIButton+iSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+iSearch.swift"; sourceTree = "<group>"; };
 		40C2349224405D4B00A5A462 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		40C2349424405D9500A5A462 /* GetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetButton.swift; sourceTree = "<group>"; };
+		40C234962440677B00A5A462 /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
 		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
@@ -226,7 +228,7 @@
 			children = (
 				40C2346D243F70E000A5A462 /* SearchResult.swift */,
 				40C23471243F725A00A5A462 /* Result.swift */,
-				40C23476243F778300A5A462 /* SearchService.swift */,
+				40C234962440677B00A5A462 /* ResultHelper.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -234,6 +236,7 @@
 		40C23473243F754400A5A462 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				40C23476243F778300A5A462 /* SearchService.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				40C2349524405D9500A5A462 /* GetButton.swift in Sources */,
 				40C85A04243F2C3600D9B5BE /* BaseSplitViewController.swift in Sources */,
 				40C23482243F998100A5A462 /* SearchDetailViewModel.swift in Sources */,
+				40C234972440677B00A5A462 /* ResultHelper.swift in Sources */,
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
 				40C2348B244048AA00A5A462 /* BaseViewModel.swift in Sources */,
 				40C2348F2440582000A5A462 /* BaseTableView.swift in Sources */,
