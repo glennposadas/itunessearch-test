@@ -223,12 +223,9 @@ class SearchDetailViewController: BaseViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        let screenWidth = self.navigationController?.view.frame.width ?? AppConfig.screenWidth
-        self.contentViewWidthConstraint?.update(offset: self.navigationController?.view.frame.width ?? 0)
+        self.contentViewWidthConstraint?.update(offset: size.width)
         self.scrollView.setNeedsLayout()
         self.scrollView.layoutIfNeeded()
-        
-        print("NEW COSNTANT: \(self.contentViewWidthConstraint!.layoutConstraints.first!.constant) | should be: \(screenWidth) | Split: \()")
     }
 }
 
