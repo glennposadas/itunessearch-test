@@ -24,6 +24,7 @@ class SearchDetailViewController: BaseViewController {
     /// Can be moved to viewModel in the future.
     var hasData: Bool = false
     
+    private let disposeBag = DisposeBag()
     private var viewModel: SearchDetailViewModel!
     private let disposeBag = DisposeBag()
     
@@ -47,7 +48,7 @@ class SearchDetailViewController: BaseViewController {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private lazy var label_About: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
@@ -64,11 +65,11 @@ class SearchDetailViewController: BaseViewController {
         label.setupLayer(cornerRadius: 0, borderWidth: 1.0, borderColor: .white)
         return label
     }()
-
+    
     private lazy var button_Buy: GetButton = {
         return GetButton(type: .custom)
     }()
-
+    
     private lazy var button_Rent: GetButton = {
         return GetButton(type: .custom)
     }()
@@ -76,8 +77,37 @@ class SearchDetailViewController: BaseViewController {
     // MARK: - Functions
     
     private func setupBindings() {
+        weak var weakSelf = self
         
+        self.viewModel.artworkResource.subscribe(onNext: { resource in
+            let placeholder = KFCrossPlatformImage(named: "ic_placeholder")
+            self.imageView_Artwork.kf.setImage(
+                with: resource,
+                placeholder: placeholder) { (result) in
+                    switch result {
+                    case .failure: self.imageView_Artwork.image = placeholder
+                    default: break
+                    }
+            }
+        }).disposed(by: self.disposeBag)
+        
+        self.viewModel.trackTitlePresentable
+            .bind(to: self.label_Title.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel.genreDatePresentable
+            .bind(to: self.label_GenreDate.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel.aboutPresentable
+            .bind(to: self.label_About.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel.contentRatingPresentable
+            .bind(to: self.label_ContentRating.rx.text)
+            .disposed(by: self.disposeBag)
     }
+    
     
     private func setupUI() {
         self.addScrollView(to: self.view, shouldExtendToTopEdge: true) { (contentView, topConstraint) in

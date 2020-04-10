@@ -26,7 +26,11 @@ class SearchDetailViewModel: BaseViewModel {
     private weak var delegate: SearchDetailDelegate?
     private var selectedResult: Result?
     
-    var artworkResource = BehaviorRelay<Resource>(value: "")
+    var artworkResource = BehaviorRelay<Resource?>(value: nil)
+    var trackTitlePresentable = BehaviorRelay<String>(value: "")
+    var genreDatePresentable = BehaviorRelay<String>(value: "")
+    var aboutPresentable = BehaviorRelay<String>(value: "")
+    var contentRatingPresentable = BehaviorRelay<String>(value: "")
     
     // MARK: - Functions
     // MARK: Overrides
