@@ -12,7 +12,6 @@
 		4064E82F243E61BE00DE7384 /* iSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4064E82D243E61BE00DE7384 /* iSearch.xcdatamodeld */; };
 		4064E831243E61C100DE7384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4064E830243E61C100DE7384 /* Assets.xcassets */; };
 		4064E834243E61C100DE7384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4064E832243E61C100DE7384 /* LaunchScreen.storyboard */; };
-		4064E83F243E61C100DE7384 /* iSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E83E243E61C100DE7384 /* iSearchTests.swift */; };
 		4064E84A243E61C100DE7384 /* iSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E849243E61C100DE7384 /* iSearchUITests.swift */; };
 		40C2346E243F70E000A5A462 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2346D243F70E000A5A462 /* SearchResult.swift */; };
 		40C23472243F725A00A5A462 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23471243F725A00A5A462 /* Result.swift */; };
@@ -31,6 +30,7 @@
 		40C2349324405D4B00A5A462 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2349224405D4B00A5A462 /* BaseButton.swift */; };
 		40C2349524405D9500A5A462 /* GetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2349424405D9500A5A462 /* GetButton.swift */; };
 		40C234972440677B00A5A462 /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C234962440677B00A5A462 /* ResultHelper.swift */; };
+		40C2349A24406D1200A5A462 /* ResultHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2349924406D1200A5A462 /* ResultHelperTests.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
 		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
@@ -75,7 +75,6 @@
 		4064E833243E61C100DE7384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4064E835243E61C100DE7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4064E83A243E61C100DE7384 /* iSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4064E83E243E61C100DE7384 /* iSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSearchTests.swift; sourceTree = "<group>"; };
 		4064E840243E61C100DE7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4064E845243E61C100DE7384 /* iSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4064E849243E61C100DE7384 /* iSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSearchUITests.swift; sourceTree = "<group>"; };
@@ -97,6 +96,8 @@
 		40C2349224405D4B00A5A462 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		40C2349424405D9500A5A462 /* GetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetButton.swift; sourceTree = "<group>"; };
 		40C234962440677B00A5A462 /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
+		40C2349824406D1100A5A462 /* iSearchTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSearchTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		40C2349924406D1200A5A462 /* ResultHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelperTests.swift; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
 		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
@@ -199,8 +200,9 @@
 		4064E83D243E61C100DE7384 /* iSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				4064E83E243E61C100DE7384 /* iSearchTests.swift */,
 				4064E840243E61C100DE7384 /* Info.plist */,
+				40C2349924406D1200A5A462 /* ResultHelperTests.swift */,
+				40C2349824406D1100A5A462 /* iSearchTests-Bridging-Header.h */,
 			);
 			path = iSearchTests;
 			sourceTree = "<group>";
@@ -463,6 +465,7 @@
 					};
 					4064E839243E61C100DE7384 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = 4064E820243E61BE00DE7384;
 					};
 					4064E844243E61C100DE7384 = {
@@ -647,7 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4064E83F243E61C100DE7384 /* iSearchTests.swift in Sources */,
+				40C2349A24406D1200A5A462 /* ResultHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +849,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RE4YFXSB23;
 				INFOPLIST_FILE = iSearchTests/Info.plist;
@@ -857,6 +861,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.glennposadas.iSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iSearchTests/iSearchTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSearch.app/iSearch";
@@ -869,6 +875,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RE4YFXSB23;
 				INFOPLIST_FILE = iSearchTests/Info.plist;
@@ -880,6 +887,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.glennposadas.iSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iSearchTests/iSearchTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSearch.app/iSearch";
