@@ -23,6 +23,9 @@ class SearchMasterViewController: BaseViewController {
     // MARK: - Functions
     
     private func setupBindings() {
+        self.tableView.dataSource = self.viewModel
+        self.tableView.delegate = self.viewModel
+        
         self.viewModel.loaderIsHidden
             .bind(to: self.view_ActivityIndicatorContainer.rx.isHidden)
             .disposed(by: self.disposeBag)

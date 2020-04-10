@@ -75,6 +75,26 @@ class DataTableViewCell: BaseTableViewCell {
     
     func setupCell(data: Result, type: DataCellType) {
         self.cellType = type
+        
+        switch type {
+        case .short:
+            self.button_Get.setup(
+                "P 55.00",
+                normalFont: UIFont.systemFont(ofSize: 14.0, weight: .medium),
+                normalTextColor: .systemBlue,
+                backgroundColor: .clear,
+                horizontalAlignment: .center
+            )
+            
+        case .long:
+            self.button_Get.setup(
+                "GET",
+                normalFont: UIFont.systemFont(ofSize: 14.0, weight: .medium),
+                normalTextColor: .systemBlue,
+                backgroundColor: .clear,
+                horizontalAlignment: .center
+            )
+        }
     }
     
     // MARK: Overrides
@@ -100,7 +120,7 @@ class DataTableViewCell: BaseTableViewCell {
         }
         
         self.contentView.addSubview(self.stackView_Labels)
-        self.stackView_Labels.snp.makeConstraint {
+        self.stackView_Labels.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(self.imageView_Artwork.snp.trailing).offset(8.0)
             $0.trailing.equalTo(self.button_Get.snp.leading).offset(-8.0)

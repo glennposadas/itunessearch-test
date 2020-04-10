@@ -72,3 +72,37 @@ class SearchMasterViewModel: BaseViewModel {
         self.search("star", country: AppConfig.country, media: self.mediaType)
     }
 }
+
+// MARK: - UITableViewDelegate
+
+extension SearchMasterViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension SearchMasterViewModel: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: DataTableViewCell?
+        
+        cell = tableView.dequeueReusableCell(withIdentifier: DataTableViewCell.identifier) as? DataTableViewCell
+        
+        if cell == nil {
+            cell = DataTableViewCell()
+        }
+        
+        if let results = self.searchResult?.results {
+            let data = results[indexPath.row]
+            let type = data.cellType
+            cell?.setupCell(data: data, type: type)
+        }
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.searchResult?.resultCount ?? 0
+    }
+}
