@@ -1,47 +1,52 @@
-# iSearch.
 
-This document contains instructions on how to build and run the project **iSearch**
+# iSearch
+
+**iSearch** is a sample project, an online assessment test, as part of my job application to [Appetiser.](https://appetiser.com.au/) 
+Completed within the 48-72 hours deadline. It's 5:30AM as of writing.
+
+## The Good Stuff
+1. Offline feature via cache ✅
+2. Save last state / data. ✅
+3. Dark Mode support. ✅
+4. Master-Detail layout.  ✅
+5. Landscape orientation support  ✅
+6. iPad support 🙋🏻‍♂️
+7. Unit Tested  ✅
+8. UI Tested  ✅
+9. MVVM + RxSwift architecture.  🏛
+10. Programmatically made UI 🤓
+11. Made with ideas from Apple's iTunes Store app. 💡
+
+## Tech Stacks
+
+The project was built using **Xcode 11.3**, **Swift 5.0**. 
+Dependencies are managed by [Cocoapods](https://cocoapods.org/).
+
+**MVVM** is the architectural pattern used together with [RxSwift](https://github.com/ReactiveX/RxSwift) to maximize the utilization of the said pattern.
+
+The important part of the project was **UI Tested**. And viewModels are **Unit Tested**, using the Apple's vanilla **XCTest** and **XCUITest** test frameworks.
+
+**Moya** was used for additional networking layer. The project was made as if it will scale, hence the said library.
+
+Lastly, to do the views layout, **SnapKit** was used. Personally, I write constraints faster with the said library compared to LayoutConstraints. *Long time ago, I was fond of ~~VFL.~~.*
 
 ---
+# NON TECHNICAL PART
+This part of the document contains instructions on how to build and run the project **iSearch**
 
 ## Getting Started
 
 You'll need the following software installed on your mac machine.
 
 1. Xcode - You can download it from the App Store on your mac.
-2. Sourcetree - [Download link](https://www.sourcetreeapp.com/)
-3. Cocoapods - [Guide](https://guides.cocoapods.org/using/getting-started.html)
 
 ---
 
-## Clone the project / repository
+## Downloading the source codes
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally.
-Cloning the project on to your local machine is simple. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ). 
+Download the project is pretty straight forward. Find the GREEN button that says Clone Or Download, and you're good to go.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
-
----
-
-## Installing Cocoapods
-
-CocoaPods manages library dependencies for your Xcode projects.
-
-The dependencies for your projects are specified in a single text file called a Podfile. CocoaPods will resolve dependencies between libraries, fetch the resulting source code, then link it together in an Xcode workspace to build your project.
-
-Ultimately the goal is to improve discoverability of, and engagement in, third party open-source libraries by creating a more centralised ecosystem.
-
-For more thorough guide, see [Cocoapods website](https://guides.cocoapods.org/using/getting-started.html).
-
-1. Open up your **Terminal**
-2. Type in `sudo gem install cocoapods` and press enter.
-3. After installing the Cocoapods, navigate to your project folder where you can see the file named **Podfile**.
-4. When you are in the same folder of **Podfile**, type in `pod install`.
+![Clone or download](https://i.imgur.com/CZNfTCu.png)
 
 ---
 
@@ -56,11 +61,10 @@ Now click on the **PLAY** button in your Xcode. Or simple press `CMD` + `R` to r
 
 ## TestFlight
 
-Inviting an internal user (a user under your Apple Developer Account) is quite not simple. I've written a wiki for this:
+Inviting an internal user (a user under your Apple Developer Account) is quite not simple. I wrote before a wiki for this:
 [A Thorough Guide In Testing Apps Via TestFlight For Clients, Bosses, and Testers](https://github.com/glennposadas/TestFlight-Guide/wiki/A-Thorough-Guide-In-Testing-Apps-Via-TestFlight---For-Clients,-Bosses,-and-Testers).
 
---
-
+---
 ## Support
 
-Should there be questions or tech support, contact me: hello@glennvon.com
+Should there be questions or tech support, contact me: https://www.glennvon.com/
