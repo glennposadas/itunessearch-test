@@ -50,7 +50,7 @@ class DataTableViewCell: BaseTableViewCell {
     private lazy var label_Title: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         label.numberOfLines = 2
         return label
     }()
@@ -58,8 +58,8 @@ class DataTableViewCell: BaseTableViewCell {
     private lazy var label_Subtitle: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
-        label.alpha = 0.8
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        label.alpha = 0.5
         label.numberOfLines = 1
         return label
     }()
@@ -67,7 +67,7 @@ class DataTableViewCell: BaseTableViewCell {
     private lazy var label_Date: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         label.numberOfLines = 1
         label.isHidden = true
         return label
@@ -88,10 +88,10 @@ class DataTableViewCell: BaseTableViewCell {
     }()
     
     private lazy var imageView_DisclosureIcon: UIImageView = {
-        return UIImageView(image:
-            UIImage(named: "ic_chevron_right")?
-                .withTintColor(UIColor.textColor
-                    .withAlphaComponent(0.7)))
+        let imageView = UIImageView(image: UIImage(named: "ic_chevron_right")?
+                .withTintColor(UIColor.textColor))
+        imageView.alpha = 0.5
+        return imageView
     }()
     
     private var cellType: DataCellType!
