@@ -95,7 +95,7 @@ class SearchDetailViewController: BaseViewController {
         
         self.viewModel.artworkResource.subscribe(onNext: { resource in
             let placeholder = KFCrossPlatformImage(named: "ic_placeholder")
-            self.imageView_Artwork.kf.setImage(
+            weakSelf?.imageView_Artwork.kf.setImage(
                 with: resource,
                 placeholder: placeholder) { (result) in
                     switch result {
@@ -120,6 +120,27 @@ class SearchDetailViewController: BaseViewController {
         self.viewModel.contentRatingPresentable
             .bind(to: self.label_ContentRating.rx.text)
             .disposed(by: self.disposeBag)
+        
+        self.viewModel.buyButtonTitlePresentable.subscribe(onNext: { title in
+            weakSelf?.button_Buy.setup(
+                title,
+                normalFont: UIFont.systemFont(ofSize: 14.0, weight: .medium),
+                normalTextColor: .systemBlue,
+                backgroundColor: .clear,
+                horizontalAlignment: .center
+            )
+        }).disposed(by: self.disposeBag)
+        
+        self.viewModel.rentButtonTitlePresentable.subscribe(onNext: { title in
+            weakSelf?.button_Rent.setup(
+                title,
+                normalFont: UIFont.systemFont(ofSize: 14.0, weight: .medium),
+                normalTextColor: .systemBlue,
+                backgroundColor: .clear,
+                horizontalAlignment: .center
+            )
+        }).disposed(by: self.disposeBag)
+
     }
     
     
@@ -137,7 +158,9 @@ class SearchDetailViewController: BaseViewController {
                 self.label_GenreDate,
                 self.view_Separator,
                 self.label_AboutTitle,
-                self.label_AboutValue
+                self.label_AboutValue,
+                self.button_Buy,
+                self.button_Rent
             )
             
             self.imageView_Artwork.snp.makeConstraints {
@@ -180,6 +203,18 @@ class SearchDetailViewController: BaseViewController {
                 $0.top.equalTo(self.label_AboutTitle.snp.bottom).offset(8.0)
                 $0.leading.trailing.equalTo(self.label_AboutTitle)
                 $0.bottom.equalToSuperview().inset(50.0)
+            }
+            
+            self.button_Rent.snp.makeConstraints {
+                $0.bottom.equalTo(self.imageView_Artwork).offset(-5.0)
+                $0.leading.equalTo(self.label_Title)
+                $0.width.equalTo(110.0)
+            }
+            
+            self.button_Buy.snp.makeConstraints {
+                $0.bottom.equalTo(self.button_Rent.snp.top).offset(-8.0)
+                $0.leading.equalTo(self.label_Title)
+                $0.width.equalTo(100.0)
             }
         }
     }

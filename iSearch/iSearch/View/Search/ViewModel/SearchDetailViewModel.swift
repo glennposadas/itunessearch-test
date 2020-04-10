@@ -31,6 +31,8 @@ class SearchDetailViewModel: BaseViewModel {
     var genreDatePresentable = BehaviorRelay<String>(value: "")
     var aboutPresentable = BehaviorRelay<String>(value: "")
     var contentRatingPresentable = BehaviorRelay<String>(value: "")
+    var buyButtonTitlePresentable = BehaviorRelay<String>(value: "")
+    var rentButtonTitlePresentable = BehaviorRelay<String>(value: "")
     
     // MARK: - Functions
     
@@ -44,6 +46,9 @@ class SearchDetailViewModel: BaseViewModel {
         self.genreDatePresentable.accept(genreDatePresentable)
         self.aboutPresentable.accept(data.longDescriptionPresentable)
         self.contentRatingPresentable.accept(data.contentAdvisoryRatingPresentable)
+        
+        self.buyButtonTitlePresentable.accept(data.buyButtonTitlePresentable)
+        self.rentButtonTitlePresentable.accept(data.rentButtonTitlePresentable)
     }
     
     // MARK: Overrides

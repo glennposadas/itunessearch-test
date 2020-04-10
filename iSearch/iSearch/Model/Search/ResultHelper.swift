@@ -141,7 +141,7 @@ extension Result {
         get {
             let rentPrice = self.trackRentalPrice ?? 0.00
             let rentPriceString = String(format:"%.2f", rentPrice)
-            return "\(self.currencySymbol) \(rentPriceString)"
+            return "\(self.currencySymbol) \(rentPriceString) RENT"
         }
     }
     
@@ -150,7 +150,7 @@ extension Result {
         get {
             let buyPrice = self.trackPrice ?? 0.00
             let buyPriceString = String(format:"%.2f", buyPrice)
-            return "\(self.currencySymbol) \(buyPriceString)"
+            return "\(self.currencySymbol) \(buyPriceString) BUY"
         }
     }
     
