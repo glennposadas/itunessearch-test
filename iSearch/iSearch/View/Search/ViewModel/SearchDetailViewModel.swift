@@ -6,6 +6,11 @@
 //  Copyright © 2020 CitusLabs. All rights reserved.
 //
 
+import Foundation
+import Kingfisher
+import RxCocoa
+import RxSwift
+
 /**
  Protocol of `SearchDetailViewModel`.
  */
@@ -20,6 +25,8 @@ class SearchDetailViewModel: BaseViewModel {
     
     private weak var delegate: SearchDetailDelegate?
     private var selectedResult: Result?
+    
+    var artworkResource = BehaviorRelay<Resource>(value: "")
     
     // MARK: - Functions
     // MARK: Overrides
