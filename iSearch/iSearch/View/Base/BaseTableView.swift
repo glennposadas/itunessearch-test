@@ -42,7 +42,6 @@ class BaseTableView: UITableView {
     }
     
     func reloadData(_ animated: Bool, completion: (() -> Void)? = nil) {
-        
         self.reloadData()
         
         if animated {

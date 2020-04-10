@@ -16,10 +16,11 @@ extension UIView {
     }
     
     /// Generates a generic view with specic bg.
-    static func new(backgroundColor: UIColor, alpha: CGFloat = 1.0) -> UIView {
+    static func new(backgroundColor: UIColor, alpha: CGFloat = 1.0, isHidden: Bool = false) -> UIView {
         let view = UIView()
         view.backgroundColor = backgroundColor
         view.alpha = alpha
+        view.isHidden = isHidden
         return view
     }
     

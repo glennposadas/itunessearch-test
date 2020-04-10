@@ -30,6 +30,12 @@ class SearchMasterViewController: BaseViewController {
     
     private func setupUI() {
         self.title = "Track List"
+        
+        self.tableView.backgroundColor = .red
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     // MARK: Overrides
@@ -47,6 +53,6 @@ class SearchMasterViewController: BaseViewController {
 
 extension SearchMasterViewController: SearchMasterDelegate {
     func reloadData() {
-        
+        self.tableView.reloadData()
     }
 }

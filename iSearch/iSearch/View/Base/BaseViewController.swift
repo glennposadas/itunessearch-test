@@ -37,7 +37,7 @@ class BaseViewController: UIViewController {
         activityIndicator.startAnimating()
         activityIndicator.tintColor = .textColor
         
-        let view = UIView.new(backgroundColor: .clear)
+        let view = UIView.new(backgroundColor: .clear, isHidden: true)
         view.addSubviews(label, activityIndicator)
         
         activityIndicator.snp.makeConstraints {

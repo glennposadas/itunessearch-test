@@ -31,15 +31,19 @@ class SearchMasterViewModel: BaseViewModel {
     
     /// Should the loader be hidden?
     var loaderIsHidden = BehaviorRelay<Bool>(value: true)
+    /// Should the tableView be hidden? I.e. hidden whilst loader is visible
+    var tableViewIsHidden = BehaviorRelay<Bool>(value: true)
     
     // MARK: - Functions
     
     /// Do searching... call `SearchService`.
     private func search(_ term: String, country: String, media: String) {
         self.loaderIsHidden.accept(false)
+        self.tableViewIsHidden.accept(true)
         
         searchProvider.request(.search(term: term, country: country, media: media)) { (result) in
             self.loaderIsHidden.accept(true)
+            self.tableViewIsHidden.accept(false)
             
             switch result {
             case let .success(response):
