@@ -8,16 +8,24 @@
 
 import UIKit
 
+/**
+ The controller for the Search master screen.
+ */
 class SearchMasterViewController: BaseViewController {
 
     // MARK: - Properties
     
-    
+    private var viewModel: SearchMasterViewModel!
     
     // MARK: - Functions
     
+    private func setupBindings() {
+        
+    }
+    
     private func setupUI() {
         self.title = "Track List"
+        self.layoutActivityIndicator()
     }
     
     // MARK: Overrides
@@ -25,6 +33,16 @@ class SearchMasterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupUI()        
+        self.viewModel = SearchMasterViewModel(searchMasterController: self)
+        self.setupUI()
+        self.setupBindings()
+    }
+}
+
+// MARK: - SearchMasterDelegate
+
+extension SearchMasterViewController: SearchMasterDelegate {
+    func reloadData() {
+        
     }
 }
