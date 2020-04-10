@@ -25,13 +25,19 @@ class SearchDetailViewController: BaseViewController {
     private var viewModel: SearchDetailViewModel!
     private let disposeBag = DisposeBag()
     
+    private lazy var imageView_Artwork: UIImageView = {
+        return UIImageView(image: UIImage(named: "ic_placeholder"))
+    }()
+    
     // MARK: - Functions
     
     private func setupBindings() { }
     
     private func setupUI() {
         self.addScrollView(to: self.view, shouldExtendToTopEdge: true) { (contentView, topConstraint) in
-
+            contentView.addSubviews(
+                
+            )
         }
     }
 
@@ -40,7 +46,7 @@ class SearchDetailViewController: BaseViewController {
     init(selectedResult: Result?) {
         super.init(nibName: nil, bundle: nil)
      
-        self.hasData = true
+        self.hasData = selectedResult != nil
         self.viewModel = SearchDetailViewModel(searchDetailController: self, selectedResult: selectedResult)
     }
     

@@ -81,8 +81,9 @@ class SearchMasterViewController: BaseViewController {
 extension SearchMasterViewController: SearchMasterDelegate {
     func showDetail(with result: Result) {
         // TODO: Use coordinator or router.
-        let detailController = SearchDetailViewController(selectedResult: result)
-        self.splitViewController?.showDetailViewController(detailController, sender: nil)
+        let searchDetailController = SearchDetailViewController(selectedResult: result)
+        let detailNavCon = UINavigationController(rootViewController: searchDetailController)
+        self.splitViewController?.showDetailViewController(detailNavCon, sender: nil)
     }
     
     func reloadData() {

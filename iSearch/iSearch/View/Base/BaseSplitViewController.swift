@@ -12,24 +12,35 @@ import UIKit
  The base split controller, intended to for Search tab.
  Should other tabs need to use this, then handle delegate properly.
  */
-class BaseSplitViewController: UISplitViewController, UISplitViewControllerDelegate {
+class BaseSplitViewController: UISplitViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    // MARK: - Properties
+    
+    // MARK: - Functions
+    // MARK: Overrides
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.maximumPrimaryColumnWidth = AppConfig.screenWidth * 0.50
+        self.minimumPrimaryColumnWidth = AppConfig.screenWidth * 0.40
         self.preferredDisplayMode = .allVisible
         self.delegate = self
     }
-    
+}
+
+// MARK: - UISplitViewControllerDelegate
+
+extension BaseSplitViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController,
                              collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        /*if let navCon = secondaryViewController as? UINavigationController,
+        if let navCon = secondaryViewController as? UINavigationController,
             let detail = navCon.topViewController as? SearchDetailViewController,
             !detail.hasData {
             return true
         }
         
-        return false*/
-        return true
+        return false
     }
+
 }

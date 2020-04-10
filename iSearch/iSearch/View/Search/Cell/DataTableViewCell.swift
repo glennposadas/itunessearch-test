@@ -105,10 +105,19 @@ class DataTableViewCell: BaseTableViewCell {
         self.button_Get.isHidden = data.getButtonIsHidden
         self.imageView_DisclosureIcon.isHidden = !data.getButtonIsHidden
         
-        self.imageView_Artwork.kf.setImage(with: data.artworkResource)
         self.label_Title.text = data.titlePresentable
         self.label_Subtitle.text = data.subtitlePresentable
         self.label_Date.text = data.datePresentable
+        
+        let placeholder = KFCrossPlatformImage(named: "ic_placeholder")
+        self.imageView_Artwork.kf.setImage(
+            with: data.artworkResource,
+            placeholder: placeholder) { (result) in
+                switch result {
+                case .failure: self.imageView_Artwork.image = placeholder
+                default: break
+                }
+        }
         
         switch type {
         case .short:
