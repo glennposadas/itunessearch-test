@@ -25,12 +25,13 @@ class BaseViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12.0)
         label.textColor = .textColor
-        label.text = "Loading..."
+        label.text = "LOADING"
         
         let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.startAnimating()
         activityIndicator.tintColor = .textColor
         
-        let view = UIView.new(backgroundColor: .clear, alpha: 0)
+        let view = UIView.new(backgroundColor: .clear)
         view.addSubviews(label, activityIndicator)
         
         activityIndicator.snp.makeConstraints {
@@ -38,7 +39,7 @@ class BaseViewController: UIViewController {
         }
         
         label.snp.makeConstraints {
-            $0.top.equalTo(activityIndicator.snp.bottom)
+            $0.top.equalTo(activityIndicator.snp.bottom).offset(8.0)
             $0.centerX.equalToSuperview()
         }
         
@@ -60,6 +61,8 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.layoutActivityIndicator()
+        
         self.backgroundColor = .backgroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
