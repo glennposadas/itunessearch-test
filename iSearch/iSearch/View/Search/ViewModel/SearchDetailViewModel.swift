@@ -19,12 +19,14 @@ class SearchDetailViewModel: BaseViewModel {
     // MARK: - Properties
     
     private weak var delegate: SearchDetailDelegate?
+    private var selectedResult: Result?
     
     // MARK: - Functions
     // MARK: Overrides
     
-    init(searchDetailController: SearchDetailDelegate?) {
-        
+    init(searchDetailController: SearchDetailDelegate?, selectedResult: Result?) {
+        super.init()
+        self.selectedResult = selectedResult
     }
     
     /// A controller lifecycle method

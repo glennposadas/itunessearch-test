@@ -13,7 +13,9 @@ import RxSwift
 /**
  Protocol of `SearchMasterViewModel`.
  */
-protocol SearchMasterDelegate: BaseViewModelDelegate { }
+protocol SearchMasterDelegate: BaseViewModelDelegate {
+    func showDetail(with result: Result)
+}
 
 /**
  The viewmodel that the `SearchMasterViewController` owns.
@@ -77,6 +79,14 @@ class SearchMasterViewModel: BaseViewModel {
         self.delegate = searchMasterController
         self.search(self.searchTerm, country: AppConfig.country, media: self.mediaType)
     }
+    
+    /// A controller lifecycle method
+    func viewDidAppear() {
+        if let storedResult = AppDefaults.getObjectWithKey(.lastViewedResult, type: Result.self) {
+            self.delegate?.showDetail(with: storedResult)
+            AppDefaults.removeDefaultsWithKey(.lastViewedResult)
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -84,6 +94,14 @@ class SearchMasterViewModel: BaseViewModel {
 extension SearchMasterViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let results = self.searchResult?.results {
+            let data = results[indexPath.row]
+            // Store result to defaults for last viewing.
+            AppDefaults.store(data, key: .lastViewedResult)
+            // Show the detail screen
+            self.delegate?.showDetail(with: data)
+        }
     }
 }
 

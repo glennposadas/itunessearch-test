@@ -118,7 +118,7 @@ extension Result {
         }
     }
     
-    /// The artwork 100
+    /// The artwork 200
     var artworkResource: ImageResource {
         get {
             var artworkUrlString = self.artworkUrl100 ?? self.artworkUrl60 ?? ""
