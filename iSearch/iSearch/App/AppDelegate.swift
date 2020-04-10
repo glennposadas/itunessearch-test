@@ -13,6 +13,10 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if CommandLine.arguments.contains("--uitesting") {
+            let defaultsName = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: defaultsName)
+        }
         
         return true
     }
