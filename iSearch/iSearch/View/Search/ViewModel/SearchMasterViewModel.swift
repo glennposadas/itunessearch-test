@@ -28,7 +28,7 @@ class SearchMasterViewModel: BaseViewModel {
     private var searchTerm = "star"
     private weak var delegate: SearchMasterDelegate?
     
-    private var searchResult: SearchResult?
+    var searchResult: SearchResult?
     
     // MARK: Visibilities
     
