@@ -31,9 +31,9 @@ extension Result {
         }
     }
     
-    /// Determines if we are to hide the extra label for date, if movies and books.
+    /// Determines if we are to hide the extra label for date. Show if movies and books.
     var dateLabelIsHidden: Bool {
-        self.cellType == .long
+        self.cellType != .long
     }
     
     /// Determines if we are to hide the get button
@@ -92,10 +92,10 @@ extension Result {
     
     var datePresentable: String {
         get {
-            let releaseDate = self.releaseDate ?? ""
+            let releaseDate = (self.releaseDate ?? "").toDate()
             let format = "MMM d, yyyy"
-            let formattedDate = releaseDate.toDate(format, region: .current)
-            return formattedDate?.toString() ?? ""
+            let formattedDate = releaseDate?.toFormat(format)
+            return formattedDate ?? "Release Date Unavailable"
         }
     }
     
@@ -121,7 +121,8 @@ extension Result {
     /// The artwork 100
     var artworkResource: ImageResource {
         get {
-            let artworkUrlString = self.artworkUrl100 ?? self.artworkUrl60 ?? ""
+            var artworkUrlString = self.artworkUrl100 ?? self.artworkUrl60 ?? ""
+            artworkUrlString = artworkUrlString.replacingOccurrences(of: "100", with: "200")
             let url = URL(string: artworkUrlString)!
             return ImageResource(downloadURL: url, cacheKey: url.absoluteString)
         }
