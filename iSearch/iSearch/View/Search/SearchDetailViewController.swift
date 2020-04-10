@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import SnapKit
 import RxCocoa
 import RxSwift
 import UIKit
@@ -26,6 +27,9 @@ class SearchDetailViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
     private var viewModel: SearchDetailViewModel!
+    
+    /// Useful for iPads refreshign layout.
+    private var contentViewWidthConstraint: Constraint?
     
     private lazy var imageView_Artwork: UIImageView = {
         return UIImageView(image: UIImage(named: "ic_placeholder"))
@@ -123,7 +127,9 @@ class SearchDetailViewController: BaseViewController {
         // We get the correct screenwidth of the detail controller in a split controller.
         let screenWidth = self.navigationController?.view.frame.width ?? AppConfig.screenWidth
         // Then add scrollView
-        self.addScrollView(to: self.view, shouldExtendToTopEdge: true, screenWidth: screenWidth ) { (contentView, topConstraint) in
+        self.addScrollView(to: self.view, shouldExtendToTopEdge: true, screenWidth: screenWidth ) { (contentView, topConstraint, contentViewWidthConstraint) in
+            self.contentViewWidthConstraint = contentViewWidthConstraint
+            
             contentView.addSubviews(
                 self.imageView_Artwork,
                 self.label_Title,
@@ -212,6 +218,17 @@ class SearchDetailViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         self.viewModel.viewWillDisappear()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        let screenWidth = self.navigationController?.view.frame.width ?? AppConfig.screenWidth
+        self.contentViewWidthConstraint?.update(offset: self.navigationController?.view.frame.width ?? 0)
+        self.scrollView.setNeedsLayout()
+        self.scrollView.layoutIfNeeded()
+        
+        print("NEW COSNTANT: \(self.contentViewWidthConstraint!.layoutConstraints.first!.constant) | should be: \(screenWidth) | Split: \()")
     }
 }
 

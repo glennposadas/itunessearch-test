@@ -58,8 +58,9 @@ extension UIViewController {
         to aView: UIView,
         shouldExtendToTopEdge: Bool = true,
         screenWidth: CGFloat = AppConfig.screenWidth,
-        block: ((_ contentView: UIView, _ topScrollViewConstraint: Constraint?) -> Void)) {
+        block: ((_ contentView: UIView, _ topScrollViewConstraint: Constraint?, _ contentViewWidthConstraint: Constraint?) -> Void)) {
         var topConstraint: Constraint?
+        var contentViewWidthConstraint: Constraint?
         
         guard let baseVC = self as? BaseViewController else { return }
         aView.addSubview(baseVC.scrollView)
@@ -79,11 +80,11 @@ extension UIViewController {
         baseVC.scrollView.addSubview(baseVC.contentView)
         baseVC.contentView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.width.equalTo(screenWidth)
+            contentViewWidthConstraint = $0.width.equalTo(screenWidth).constraint
         }
         
         // Now let the controller add its subviews in this block
-        block(baseVC.contentView, topConstraint)
+        block(baseVC.contentView, topConstraint, contentViewWidthConstraint)
     }
     
     /**
