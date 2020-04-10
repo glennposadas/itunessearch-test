@@ -142,9 +142,15 @@ class DataTableViewCell: BaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.addSubviews()
+        self.selectionStyle = .default
         
-        self.contentView.addSubview(self.imageView_Artwork)
+        self.contentView.addSubviews(
+            self.imageView_Artwork,
+            self.button_Get,
+            self.imageView_DisclosureIcon,
+            self.stackView_Labels
+        )
+        
         self.imageView_Artwork.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(8.0)
             $0.leading.equalToSuperview().inset(16.0)
@@ -152,22 +158,19 @@ class DataTableViewCell: BaseTableViewCell {
             self.constraint_ArtworkHeight = $0.height.equalTo(90.0).constraint
         }
         
-        self.contentView.addSubview(self.button_Get)
         self.button_Get.snp.makeConstraints {
             $0.height.equalTo(30.0)
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(16.0)
             self.constraint_ButtonWidth = $0.width.equalTo(60.0).constraint
         }
-        
-        self.contentView.addSubview(self.imageView_DisclosureIcon)
+            
         self.imageView_DisclosureIcon.snp.makeConstraints {
             $0.width.equalTo(15.0)
             $0.height.equalTo(15.0)
             $0.trailing.centerY.equalTo(self.button_Get)
         }
         
-        self.contentView.addSubview(self.stackView_Labels)
         self.stackView_Labels.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(self.imageView_Artwork.snp.trailing).offset(8.0)
@@ -176,7 +179,8 @@ class DataTableViewCell: BaseTableViewCell {
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        self.setHighlightedAnimation()
+        super.setHighlighted(highlighted, animated: animated)
+        // self.setHighlightedAnimation()
     }
     
     required init?(coder aDecoder: NSCoder) {
