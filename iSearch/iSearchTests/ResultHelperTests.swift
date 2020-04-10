@@ -12,8 +12,14 @@ import XCTest
 /**
  Tests `ResultHelper`
  */
-class ResultHelperTests: XCTestCase {
-    func testLocale() {
+class ResultHelperTests: BaseUnitTests {
+    func testAllResultHelperVariables() {
+        let data = self.selectedResult!
+        XCTAssert(data.cellType == .long, "The cell type for movie (we are in movie type), must be .long")
+        XCTAssert(data.dateLabelIsHidden == false, "The date label is not hidden in movie type!")
+        XCTAssert(data.currencySymbol == "$", "The first data in stubbed response is dollars so the helper must provide $ in currencySymbole!")
+        XCTAssert(data.titlePresentable == "Star Wars: The Rise of Skywalker", "The title presentable is the first stubbed response data")
         
+        // Continue mroe test cases here...
     }
 }
