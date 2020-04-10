@@ -155,7 +155,7 @@ class DataTableViewCell: BaseTableViewCell {
             $0.top.bottom.equalToSuperview().inset(8.0)
             $0.leading.equalToSuperview().inset(16.0)
             self.constraint_ArtworkWidth = $0.width.equalTo(60.0).constraint
-            self.constraint_ArtworkHeight = $0.height.equalTo(90.0).constraint
+            self.constraint_ArtworkHeight = $0.height.equalTo(90.0).priority(.high).constraint
         }
         
         self.button_Get.snp.makeConstraints {

@@ -11,25 +11,7 @@ import UIKit
 class BaseTableView: UITableView {
 
     // MARK: - Properties
-    
-    var _backgroundColor: UIColor?
-    
-    override var backgroundColor: UIColor? {
-        didSet {
-            _backgroundColor = backgroundColor
-        }
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        self.layoutIfNeeded()
-        return self.contentSize
-    }
-    
-    override var contentSize: CGSize {
-        didSet{
-            self.invalidateIntrinsicContentSize()
-        }
-    }
+
     
     // MARK: - Functions
     
@@ -70,23 +52,12 @@ class BaseTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
-        self.estimatedRowHeight = 50.0
+        self.estimatedRowHeight = 100.0
         self.rowHeight = UITableView.automaticDimension
         self.estimatedSectionHeaderHeight = 0
         self.estimatedSectionFooterHeight = 0
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func didMoveToWindow() {
         
         // Register custom cells.
-        
-        backgroundColor = _backgroundColor
-        
-        // Base Cells
         
         self.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.identifier)
         self.register(DataTableViewCell.self, forCellReuseIdentifier: DataTableViewCell.identifier)
@@ -101,9 +72,9 @@ class BaseTableView: UITableView {
         
         // Few more setups
         self.keyboardDismissMode = .interactive
-        self.scrollsToTop = true
-        
-        super.didMoveToWindow()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

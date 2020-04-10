@@ -36,7 +36,6 @@ class SearchMasterViewController: BaseViewController {
         
         self.title = "Track List"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .automatic
         
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints {
