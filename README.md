@@ -1,4 +1,5 @@
 
+
 # iSearch
 
 **iSearch** is a sample project, an online assessment test, as part of my job application to [Appetiser.](https://appetiser.com.au/) 
@@ -29,6 +30,13 @@ The important part of the project was **UI Tested**. And viewModels are **Unit T
 **Moya** was used for additional networking layer. The project was made as if it will scale, hence the said library.
 
 Lastly, to do the views layout, **SnapKit** was used. Personally, I write constraints faster with the said library compared to LayoutConstraints. *Long time ago, I was fond of ~~VFL.~~.*
+
+## Demos
+1. https://imgur.com/LD9FJH3
+2. https://imgur.com/Am1Bdoq
+3. https://imgur.com/sjtc7pY
+
+TODO: Convert to GIF. Imgur just converts gif to mp4.
 
 ---
 # NON TECHNICAL PART
