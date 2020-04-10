@@ -26,4 +26,10 @@ class SearchDetailViewModel: BaseViewModel {
     init(searchDetailController: SearchDetailDelegate?) {
         
     }
+    
+    /// A controller lifecycle method
+    func viewWillDisappear() {
+        // Reset the defaults.
+        AppDefaults.removeDefaultsWithKey(.lastViewedResult)
+    }
 }

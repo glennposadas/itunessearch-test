@@ -31,6 +31,22 @@ class BaseViewController: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attributes)
         return refreshControl
     }()
+    
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.keyboardDismissMode = .interactive
+        return scrollView
+    }()
+    
+    /// Content view for the `scrollView`.
+    lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.backgroundColor = .clear
+        return contentView
+    }()
 
     lazy var tableView: BaseTableView = {
         let tableView = BaseTableView(frame: .zero, style: .plain)
