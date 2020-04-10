@@ -220,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				40C234A82440E16900A5A462 /* Utilities */,
-				4064E84B243E61C100DE7384 /* Info.plist */,
 				40C234A62440E12900A5A462 /* BaseUITestCase.swift */,
+				4064E84B243E61C100DE7384 /* Info.plist */,
 				40C234A52440E12900A5A462 /* iSearchUITests-Bridging-Header.h */,
 			);
 			path = iSearchUITests;

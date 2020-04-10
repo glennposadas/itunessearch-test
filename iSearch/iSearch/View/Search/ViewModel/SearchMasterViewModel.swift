@@ -81,7 +81,7 @@ class SearchMasterViewModel: BaseViewModel {
     }
     
     /// A controller lifecycle method
-    func viewDidAppear() {
+    func viewDidLoad() {
         if let storedResult = AppDefaults.getObjectWithKey(.lastViewedResult, type: Result.self) {
             self.delegate?.showDetail(with: storedResult)
             AppDefaults.removeDefaultsWithKey(.lastViewedResult)

@@ -79,6 +79,7 @@ class SearchMasterViewController: BaseViewController {
         super.viewDidLoad()
         
         self.navigationItem.largeTitleDisplayMode = .automatic
+        self.viewModel.viewDidLoad()
     }
 }
 
