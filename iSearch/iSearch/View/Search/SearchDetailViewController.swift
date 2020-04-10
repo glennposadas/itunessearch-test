@@ -120,7 +120,10 @@ class SearchDetailViewController: BaseViewController {
     
     
     private func setupUI() {
-        self.addScrollView(to: self.view, shouldExtendToTopEdge: true) { (contentView, topConstraint) in
+        // We get the correct screenwidth of the detail controller in a split controller.
+        let screenWidth = self.navigationController?.view.frame.width ?? AppConfig.screenWidth
+        // Then add scrollView
+        self.addScrollView(to: self.view, shouldExtendToTopEdge: true, screenWidth: screenWidth ) { (contentView, topConstraint) in
             contentView.addSubviews(
                 self.imageView_Artwork,
                 self.label_Title,
