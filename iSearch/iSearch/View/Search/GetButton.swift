@@ -53,7 +53,7 @@ class GetButton: BaseButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.layer.cornerRadius     = 8.0
+        self.layer.cornerRadius     = 4.0
         self.layer.borderWidth      = 1.0
         self.layer.borderColor      = UIColor.systemBlue.cgColor
         self.backgroundColor        = .clear
