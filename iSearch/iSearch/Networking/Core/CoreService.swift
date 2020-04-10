@@ -26,7 +26,7 @@ struct CoreService {
     static let deviceUUID = UIDevice.current.identifierForVendor!.uuidString
 
     /// Returns the base url of the API based on the environments.
-    static let baseURLString = URL(string: "https://itunes.apple.com/")!
+    static let baseURLString = URL(string: "https://itunes.apple.com")!
 
     // MARK: - Functions
     
