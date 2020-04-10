@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F57B5AACD95B36C49AEDDC5 /* Pods_iSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505FCAEE2ADA0AD7764F0790 /* Pods_iSearchUITests.framework */; };
 		4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E824243E61BE00DE7384 /* AppDelegate.swift */; };
 		4064E827243E61BE00DE7384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064E826243E61BE00DE7384 /* SceneDelegate.swift */; };
 		4064E82F243E61BE00DE7384 /* iSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4064E82D243E61BE00DE7384 /* iSearch.xcdatamodeld */; };
@@ -124,9 +123,6 @@
 		40C85A0F243F572300D9B5BE /* UIViewController+iSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+iSearch.swift"; sourceTree = "<group>"; };
 		40C85A11243F5E6800D9B5BE /* AppTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabs.swift; sourceTree = "<group>"; };
 		4A1EA086DE6D1D6DF1FB8DA0 /* Pods-iSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearch.debug.xcconfig"; path = "Target Support Files/Pods-iSearch/Pods-iSearch.debug.xcconfig"; sourceTree = "<group>"; };
-		505FCAEE2ADA0AD7764F0790 /* Pods_iSearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		60380CA0607F1C7BE4FBEB61 /* Pods-iSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-iSearchUITests/Pods-iSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7E8C7EE0878F58CED6349AFF /* Pods-iSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchUITests.release.xcconfig"; path = "Target Support Files/Pods-iSearchUITests/Pods-iSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D38239840915BB0F239198D6 /* Pods_iSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92D5823F1FD4C51D11F6C03 /* Pods-iSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-iSearchTests/Pods-iSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,7 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F57B5AACD95B36C49AEDDC5 /* Pods_iSearchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +161,6 @@
 				2C18CAF9391836986724569D /* Pods-iSearch.release.xcconfig */,
 				D92D5823F1FD4C51D11F6C03 /* Pods-iSearchTests.debug.xcconfig */,
 				3860621DBEA8FF4328F7D401 /* Pods-iSearchTests.release.xcconfig */,
-				60380CA0607F1C7BE4FBEB61 /* Pods-iSearchUITests.debug.xcconfig */,
-				7E8C7EE0878F58CED6349AFF /* Pods-iSearchUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -410,7 +403,6 @@
 			children = (
 				D38239840915BB0F239198D6 /* Pods_iSearch.framework */,
 				3743E4ACF321DE8803C8DADE /* Pods_iSearchTests.framework */,
-				505FCAEE2ADA0AD7764F0790 /* Pods_iSearchUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -460,7 +452,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4064E854243E61C100DE7384 /* Build configuration list for PBXNativeTarget "iSearchUITests" */;
 			buildPhases = (
-				296897842E64E8652F0C5569 /* [CP] Check Pods Manifest.lock */,
 				4064E841243E61C100DE7384 /* Sources */,
 				4064E842243E61C100DE7384 /* Frameworks */,
 				4064E843243E61C100DE7384 /* Resources */,
@@ -564,28 +555,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-iSearchTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		296897842E64E8652F0C5569 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iSearchUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -927,7 +896,6 @@
 		};
 		4064E855243E61C100DE7384 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60380CA0607F1C7BE4FBEB61 /* Pods-iSearchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -951,7 +919,6 @@
 		};
 		4064E856243E61C100DE7384 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E8C7EE0878F58CED6349AFF /* Pods-iSearchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
