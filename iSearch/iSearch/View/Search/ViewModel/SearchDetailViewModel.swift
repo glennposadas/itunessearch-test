@@ -24,7 +24,7 @@ class SearchDetailViewModel: BaseViewModel {
     // MARK: - Properties
     
     private weak var delegate: SearchDetailDelegate?
-    private var selectedResult: Result?
+    var selectedResult: Result?
     
     var artworkResource = BehaviorRelay<Resource?>(value: nil)
     var trackTitlePresentable = BehaviorRelay<String>(value: "")
