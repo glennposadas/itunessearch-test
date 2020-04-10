@@ -6,6 +6,7 @@
 //  Copyright © 2020 CitusLabs. All rights reserved.
 //
 
+import Kingfisher
 import SnapKit
 import UIKit
 
@@ -31,6 +32,8 @@ protocol DataCellDelegate { }
  Collection cell to group songs and other `kind`s, much like the original Itunes Store app.
  
  However though, it is being aimed that the artwork to be dynamic based on `kind`.
+ 
+ TODO: Add star rating view.
  */
 class DataTableViewCell: BaseTableViewCell {
 
@@ -48,6 +51,7 @@ class DataTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.textColor = .textColor
         label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -56,11 +60,25 @@ class DataTableViewCell: BaseTableViewCell {
         label.textColor = .textColor
         label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
         label.alpha = 0.8
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    private lazy var label_Date: UILabel = {
+        let label = UILabel()
+        label.textColor = .textColor
+        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.numberOfLines = 1
+        label.isHidden = true
         return label
     }()
     
     private lazy var stackView_Labels: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [self.label_Title, self.label_Subtitle])
+        let stackView = UIStackView(arrangedSubviews: [
+            self.label_Title,
+            self.label_Subtitle,
+            self.label_Date
+        ])
         stackView.axis = .vertical
         return stackView
     }()
@@ -76,15 +94,26 @@ class DataTableViewCell: BaseTableViewCell {
     func setupCell(data: Result, type: DataCellType) {
         self.cellType = type
         
+        self.label_Date.isHidden = data.dateLabelIsHidden
+        self.button_Get.isHidden = data.getButtonIsHidden
+        
+        self.imageView_Artwork.kf.setImage(with: data.artworkResource)
+        self.label_Title.text = data.titlePresentable
+        self.label_Subtitle.text = data.subtitlePresentable
+        self.label_Date.text = data.datePresentable
+        
         switch type {
         case .short:
             self.button_Get.setup(
-                "P 55.00",
+                data.getButtonTitlePresentable,
                 normalFont: UIFont.systemFont(ofSize: 14.0, weight: .medium),
                 normalTextColor: .systemBlue,
                 backgroundColor: .clear,
                 horizontalAlignment: .center
             )
+            
+            self.constraint_ArtworkWidth?.update(offset: 50.0)
+            self.constraint_ArtworkHeight?.update(offset: 50.0)
             
         case .long:
             self.button_Get.setup(
@@ -94,6 +123,9 @@ class DataTableViewCell: BaseTableViewCell {
                 backgroundColor: .clear,
                 horizontalAlignment: .center
             )
+            
+            self.constraint_ArtworkWidth?.update(offset: 60.0)
+            self.constraint_ArtworkHeight?.update(offset: 90.0)
         }
     }
     
@@ -108,15 +140,16 @@ class DataTableViewCell: BaseTableViewCell {
         self.imageView_Artwork.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(8.0)
             $0.leading.equalToSuperview().inset(16.0)
-            self.constraint_ArtworkWidth = $0.width.equalTo(40.0).constraint
-            self.constraint_ArtworkHeight = $0.height.equalTo(40.0).constraint
+            self.constraint_ArtworkWidth = $0.width.equalTo(50.0).constraint
+            self.constraint_ArtworkHeight = $0.height.equalTo(50.0).constraint
         }
         
         self.contentView.addSubview(self.button_Get)
         self.button_Get.snp.makeConstraints {
-            $0.height.equalTo(44.0)
+            $0.height.equalTo(30.0)
+            $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(16.0)
-            self.constraint_ButtonWidth = $0.width.equalTo(100.0).constraint
+            self.constraint_ButtonWidth = $0.width.equalTo(60.0).constraint
         }
         
         self.contentView.addSubview(self.stackView_Labels)
@@ -125,6 +158,11 @@ class DataTableViewCell: BaseTableViewCell {
             $0.leading.equalTo(self.imageView_Artwork.snp.trailing).offset(8.0)
             $0.trailing.equalTo(self.button_Get.snp.leading).offset(-8.0)
         }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        self.setHighlightedAnimation()
     }
     
     required init?(coder aDecoder: NSCoder) {
