@@ -27,11 +27,20 @@ class SearchMasterViewModel: BaseViewModel {
     
     private var searchResult: SearchResult?
     
+    // MARK: Visibilities
+    
+    /// Should the loader be hidden?
+    var loaderIsHidden = BehaviorRelay<Bool>(value: true)
+    
     // MARK: - Functions
     
     /// Do searching... call `SearchService`.
     private func search(_ term: String, country: String, media: String) {
+        self.loaderIsHidden.accept(false)
+        
         searchProvider.request(.search(term: term, country: country, media: media)) { (result) in
+            self.loaderIsHidden.accept(true)
+            
             switch result {
             case let .success(response):
                 if response.statusCode == 200,
@@ -40,7 +49,7 @@ class SearchMasterViewModel: BaseViewModel {
                     self.delegate?.reloadData()
                     return
                 }
-
+                
                 // TODO: handle error further...
                 self.showError("Data error")
                 
