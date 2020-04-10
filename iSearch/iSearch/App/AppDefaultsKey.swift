@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct AppDefaultsKey {
-    static let lastViewed
+enum AppDefaultsKey: CodingKey {
+    case lastViewedResult
 }
