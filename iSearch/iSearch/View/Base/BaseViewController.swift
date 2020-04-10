@@ -20,7 +20,18 @@ class BaseViewController: UIViewController {
             self.view.backgroundColor = newValue
         }
     }
-    
+
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .textColor
+        let attributes: [NSAttributedString.Key : Any] = [
+            .foregroundColor : UIColor.textColor,
+            .font: UIFont.systemFont(ofSize: 14.0)
+        ]
+        refreshControl.attributedTitle = NSAttributedString(string: "Please wait...", attributes: attributes)
+        return refreshControl
+    }()
+
     lazy var tableView: BaseTableView = {
         let tableView = BaseTableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .clear
@@ -54,6 +65,19 @@ class BaseViewController: UIViewController {
     
     // MARK: - Functions
     
+    /// Add  pull to refresh to tableView
+    func addPullToRefreshControl(to tableView: UITableView, inset: CGFloat = 0) {
+        self.refreshControl.bounds = CGRect(
+            x: self.refreshControl.bounds.minX,
+            y: inset,
+            width: self.refreshControl.bounds.size.width,
+            height: self.refreshControl.bounds.size.height
+        )
+        
+        tableView.refreshControl = self.refreshControl
+    }
+    
+    /// Layout activity indicator view.
     func layoutActivityIndicator() {
         self.view.addSubview(self.view_ActivityIndicatorContainer)
         self.view_ActivityIndicatorContainer.snp.makeConstraints {
@@ -68,7 +92,6 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         self.layoutActivityIndicator()
-        
         self.navigationItem.largeTitleDisplayMode = .automatic
         
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
