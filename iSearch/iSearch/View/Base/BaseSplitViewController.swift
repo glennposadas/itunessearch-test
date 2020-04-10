@@ -23,12 +23,13 @@ class BaseSplitViewController: UISplitViewController, UISplitViewControllerDeleg
     
     func splitViewController(_ splitViewController: UISplitViewController,
                              collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        if let navCon = secondaryViewController as? UINavigationController,
+        /*if let navCon = secondaryViewController as? UINavigationController,
             let detail = navCon.topViewController as? SearchDetailViewController,
             !detail.hasData {
             return true
         }
         
-        return false
+        return false*/
+        return true
     }
 }

@@ -16,7 +16,7 @@ class BaseTabBarController: UITabBarController {
     lazy var searchSplitController: BaseSplitViewController = {
         let splitViewController =  BaseSplitViewController()
         let masterVC = SearchMasterViewController()
-        let detailVC = SearchDetailViewController()
+        let detailVC = SearchDetailViewController(selectedResult: nil)
         let masterNavController = UINavigationController(rootViewController: masterVC)
         let detailNavController = UINavigationController(rootViewController: detailVC)
         splitViewController.viewControllers = [masterNavController,detailNavController]

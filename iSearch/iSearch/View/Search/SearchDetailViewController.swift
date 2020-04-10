@@ -30,15 +30,14 @@ class SearchDetailViewController: BaseViewController {
     private func setupBindings() { }
     
     private func setupUI() {
-        self.contentView.backgroundColor = .brown
         self.addScrollView(to: self.view, shouldExtendToTopEdge: true) { (contentView, topConstraint) in
-            
+
         }
     }
 
     // MARK: - Initialization
     
-    init(selectedResult: Result) {
+    init(selectedResult: Result?) {
         super.init(nibName: nil, bundle: nil)
      
         self.hasData = true
