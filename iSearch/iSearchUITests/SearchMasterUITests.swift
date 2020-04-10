@@ -19,10 +19,10 @@ class SearchMasterUITests: BaseUITestCase {
         
         // Static Texts - Tabs
         XCTAssert(largeTitle.exists)
-        XCTAssert(app.staticTexts["Recents"].exists)
-        XCTAssert(app.staticTexts["Downloads"].exists)
-        XCTAssert(app.staticTexts["Search"].exists)
-        XCTAssert(app.staticTexts["Featured"].exists)
-        XCTAssert(app.staticTexts["More"].exists)
+        XCTAssert(app.tabBars.buttons["Recents"].exists)
+        XCTAssert(app.tabBars.buttons["Downloads"].exists)
+        XCTAssert(app.tabBars.buttons["Search"].exists)
+        XCTAssert(app.tabBars.buttons["Featured"].exists)
+        XCTAssert(app.tabBars.buttons["More"].exists)
     }
 }
