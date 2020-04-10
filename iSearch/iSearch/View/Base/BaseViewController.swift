@@ -21,6 +21,12 @@ class BaseViewController: UIViewController {
         }
     }
     
+    lazy var tableView: BaseTableView = {
+        let tableView = BaseTableView(frame: .zero, style: .plain)
+        tableView.backgroundColor = .white
+        return tableView
+    }()
+
     lazy var view_ActivityIndicatorContainer: UIView = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12.0)

@@ -26,6 +26,7 @@
 		40C23487243FA5E100A5A462 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23486243FA5E100A5A462 /* DataTableViewCell.swift */; };
 		40C2348B244048AA00A5A462 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2348A244048AA00A5A462 /* BaseViewModel.swift */; };
 		40C2348D24404A5300A5A462 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2348C24404A5300A5A462 /* AppConfig.swift */; };
+		40C2348F2440582000A5A462 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2348E2440582000A5A462 /* BaseTableView.swift */; };
 		40C859FA243F01EE00D9B5BE /* SearchResut.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C859F9243F01EE00D9B5BE /* SearchResut.json */; };
 		40C859FE243F24C400D9B5BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FD243F24C400D9B5BE /* BaseViewController.swift */; };
 		40C85A00243F24E100D9B5BE /* SearchMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */; };
@@ -87,6 +88,7 @@
 		40C23486243FA5E100A5A462 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		40C2348A244048AA00A5A462 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		40C2348C24404A5300A5A462 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		40C2348E2440582000A5A462 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		40C859F9243F01EE00D9B5BE /* SearchResut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchResut.json; sourceTree = "<group>"; };
 		40C859FD243F24C400D9B5BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40C859FF243F24E100D9B5BE /* SearchMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMasterViewController.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			children = (
 				40C234882440488900A5A462 /* Cell */,
 				40C234892440489100A5A462 /* ViewModel */,
+				40C2348E2440582000A5A462 /* BaseTableView.swift */,
 				40C859FD243F24C400D9B5BE /* BaseViewController.swift */,
 				40C85A03243F2C3600D9B5BE /* BaseSplitViewController.swift */,
 				40C85A09243F3C6500D9B5BE /* BaseTabBarController.swift */,
@@ -598,6 +601,7 @@
 				40C23482243F998100A5A462 /* SearchDetailViewModel.swift in Sources */,
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
 				40C2348B244048AA00A5A462 /* BaseViewModel.swift in Sources */,
+				40C2348F2440582000A5A462 /* BaseTableView.swift in Sources */,
 				40C85A10243F572300D9B5BE /* UIViewController+iSearch.swift in Sources */,
 				40C85A0E243F53E800D9B5BE /* UIView+iSearch.swift in Sources */,
 				40C85A0A243F3C6500D9B5BE /* BaseTabBarController.swift in Sources */,
