@@ -14,7 +14,6 @@ target 'iSearch' do
     pod 'RxSwift',                    '~> 5.0.1'              # Reactive/Functional Programming Framework
     pod 'RxCocoa',                    '~> 5.0.1'              # Reactive/Functional Programming Framework
     pod 'SnapKit',                    '~> 5.0.1'              # Constraint Programmatically.
-    pod 'SVProgressHUD',              '~> 2.2.5'              # HUD Loader
     pod 'SwiftDate',                  '~> 6.1.0'              # Dates Handler
     
     target 'iSearchTests' do
