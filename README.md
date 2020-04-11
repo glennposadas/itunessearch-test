@@ -18,6 +18,16 @@ Completed within the 48-72 hours deadline. It's 5:30AM as of writing.
 10. Programmatically made UI 🤓
 11. Made with ideas from Apple's iTunes Store app. 💡
 
+---
+## Demos
+
+![enter image description here](https://media2.giphy.com/media/MAvQxCY0Wsb8bkQuYY/giphy.gif)
+
+![enter image description here](https://media.giphy.com/media/kBxciWlYuA5FQ4q1rH/giphy.gif)
+
+![enter image description here](https://media2.giphy.com/media/JRsSLQGRCq1gHmhZq1/200.webp)
+
+---
 ## Tech Stacks
 
 The project was built using **Xcode 11.3**, **Swift 5.0**. 
@@ -30,13 +40,6 @@ The important part of the project was **UI Tested**. And viewModels are **Unit T
 **Moya** was used for additional networking layer. The project was made as if it will scale, hence the said library.
 
 Lastly, to do the views layout, **SnapKit** was used. Personally, I write constraints faster with the said library compared to LayoutConstraints. *Long time ago, I was fond of ~~VFL.~~.*
-
-## Demos
-1. https://imgur.com/LD9FJH3
-2. https://imgur.com/Am1Bdoq
-3. https://imgur.com/sjtc7pY
-
-TODO: Convert to GIF. Imgur just converts gif to mp4.
 
 ---
 # NON TECHNICAL PART
