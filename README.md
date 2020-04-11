@@ -1,7 +1,8 @@
 
 
 
-# iSearch
+
+# iSearch <img src="https://i.imgur.com/gS3Ody6.png" width="30" height="30">
 
 **iSearch** is a sample project, an online assessment test, as part of my job application at [Appetiser.](https://appetiser.com.au/) 
 Completed within the 48-72 hours deadline. It's 5:30AM as of writing.
