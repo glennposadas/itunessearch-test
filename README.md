@@ -37,9 +37,9 @@ Dependencies are managed by [Cocoapods](https://cocoapods.org/).
 
 The important part of the project was **UI Tested**. And viewModels are **Unit Tested**, using the Apple's vanilla **XCTest** and **XCUITest** test frameworks.
 
-**Moya** was used for additional networking layer. The project was made as if it will scale, hence the said library.
+**Moya** was used for additional networking layer. The project was made as if it will scale, hence the said library. Also, this awesome library makes Unit Testing easy.
 
-Lastly, to do the views layout, **SnapKit** was used. Personally, I write constraints faster with the said library compared to LayoutConstraints. *Long time ago, I was fond of ~~VFL.~~.*
+Lastly, to do the views layout, **SnapKit** was used. Like what was mentioned above, the project was made with scaling in mind (only as if). Personally, I write constraints faster with the said library compared to LayoutConstraints. *Long time ago, I was fond of ~~VFL.~~.*
 
 ---
 # NON TECHNICAL PART
