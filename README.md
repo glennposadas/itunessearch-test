@@ -1,5 +1,6 @@
 
 
+
 # iSearch
 
 **iSearch** is a sample project, an online assessment test, as part of my job application to [Appetiser.](https://appetiser.com.au/) 
@@ -21,11 +22,9 @@ Completed within the 48-72 hours deadline. It's 5:30AM as of writing.
 ---
 ## Demos
 
-![enter image description here](https://media2.giphy.com/media/MAvQxCY0Wsb8bkQuYY/giphy.gif)
-
-![enter image description here](https://media.giphy.com/media/kBxciWlYuA5FQ4q1rH/giphy.gif)
-
-![enter image description here](https://media2.giphy.com/media/JRsSLQGRCq1gHmhZq1/200.webp)
+Dark Mode                  |  Light Mode + Cache.      | Landscape.   
+:-------------------------:|:-------------------------:|:-------------------------------:
+![Dark Mode](https://media2.giphy.com/media/MAvQxCY0Wsb8bkQuYY/giphy.gif)  | ![Light Mode + Cache](https://media.giphy.com/media/kBxciWlYuA5FQ4q1rH/giphy.gif). | ![Landscape](https://media.giphy.com/media/eM1f11CLuDHWgkZDTC/giphy.gif)
 
 ---
 ## Tech Stacks
