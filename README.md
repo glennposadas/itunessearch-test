@@ -3,7 +3,7 @@
 
 # iSearch
 
-**iSearch** is a sample project, an online assessment test, as part of my job application to [Appetiser.](https://appetiser.com.au/) 
+**iSearch** is a sample project, an online assessment test, as part of my job application at [Appetiser.](https://appetiser.com.au/) 
 Completed within the 48-72 hours deadline. It's 5:30AM as of writing.
 
 ---
@@ -76,6 +76,6 @@ Inviting an internal user (a user under your Apple Developer Account) is quite n
 [A Thorough Guide In Testing Apps Via TestFlight For Clients, Bosses, and Testers](https://github.com/glennposadas/TestFlight-Guide/wiki/A-Thorough-Guide-In-Testing-Apps-Via-TestFlight---For-Clients,-Bosses,-and-Testers).
 
 ---
-## Support
+## Support | Contact
 
-Should there be questions or tech support, contact me: https://www.glennvon.com/
+Should there be questions or any discussions, you may contact me: https://www.glennvon.com/
