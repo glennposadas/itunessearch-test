@@ -11,6 +11,17 @@ import Kingfisher
 import SwiftDate
 
 /**
+ Enum to determine the type of the current cell.
+ */
+enum DataCellType {
+    /// The short is used for songs kind of cell, with square-ish artwork imageView.
+    case short
+    /// The long type is used for books and movies.
+    case long
+}
+
+
+/**
  The helper for `Result`. Useful for extracting presentables.
  */
 extension Result {

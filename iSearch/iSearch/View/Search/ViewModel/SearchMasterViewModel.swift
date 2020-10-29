@@ -111,7 +111,7 @@ extension SearchMasterViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: DataTableViewCell?
         
-        cell = tableView.dequeueReusableCell(withIdentifier: DataTableViewCell.identifier) as? DataTableViewCell
+        cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell") as? DataTableViewCell
         
         if cell == nil {
             cell = DataTableViewCell()
@@ -120,7 +120,7 @@ extension SearchMasterViewModel: UITableViewDataSource {
         if let results = self.searchResult?.results {
             let data = results[indexPath.row]
             let type = data.cellType
-            cell?.setupCell(data: data, type: type)
+            cell?.configure(with: data)
         }
         
         return cell!

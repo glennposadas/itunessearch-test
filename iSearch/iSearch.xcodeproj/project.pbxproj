@@ -18,6 +18,9 @@
 		4064E82F243E61BE00DE7384 /* iSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4064E82D243E61BE00DE7384 /* iSearch.xcdatamodeld */; };
 		4064E831243E61C100DE7384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4064E830243E61C100DE7384 /* Assets.xcassets */; };
 		4064E834243E61C100DE7384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4064E832243E61C100DE7384 /* LaunchScreen.storyboard */; };
+		408A41152448634D004A6BD5 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A41122448634D004A6BD5 /* ImageCache.swift */; };
+		408A41162448634D004A6BD5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A41132448634D004A6BD5 /* ImageLoader.swift */; };
+		408A41172448634D004A6BD5 /* CacheConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A41142448634D004A6BD5 /* CacheConfig.swift */; };
 		40C2346E243F70E000A5A462 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2346D243F70E000A5A462 /* SearchResult.swift */; };
 		40C23472243F725A00A5A462 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23471243F725A00A5A462 /* Result.swift */; };
 		40C23477243F778300A5A462 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C23476243F778300A5A462 /* SearchService.swift */; };
@@ -96,6 +99,9 @@
 		4064E840243E61C100DE7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4064E845243E61C100DE7384 /* iSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4064E84B243E61C100DE7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		408A41122448634D004A6BD5 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		408A41132448634D004A6BD5 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		408A41142448634D004A6BD5 /* CacheConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheConfig.swift; sourceTree = "<group>"; };
 		40C2346D243F70E000A5A462 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		40C23471243F725A00A5A462 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		40C23476243F778300A5A462 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
@@ -402,6 +408,9 @@
 		40C859FB243F24A100D9B5BE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				408A41142448634D004A6BD5 /* CacheConfig.swift */,
+				408A41122448634D004A6BD5 /* ImageCache.swift */,
+				408A41132448634D004A6BD5 /* ImageLoader.swift */,
 				40C2347A243F896A00A5A462 /* CoreService.swift */,
 				40C85A05243F2EBC00D9B5BE /* CachePolicyPlugin.swift */,
 				40C85A07243F3B0000D9B5BE /* Reachability.swift */,
@@ -635,10 +644,13 @@
 			files = (
 				40C2349524405D9500A5A462 /* GetButton.swift in Sources */,
 				40C85A04243F2C3600D9B5BE /* BaseSplitViewController.swift in Sources */,
+				408A41172448634D004A6BD5 /* CacheConfig.swift in Sources */,
+				408A41152448634D004A6BD5 /* ImageCache.swift in Sources */,
 				40C23482243F998100A5A462 /* SearchDetailViewModel.swift in Sources */,
 				40C234972440677B00A5A462 /* ResultHelper.swift in Sources */,
 				4064E825243E61BE00DE7384 /* AppDelegate.swift in Sources */,
 				40C234A22440A4EE00A5A462 /* AppDefaults.swift in Sources */,
+				408A41162448634D004A6BD5 /* ImageLoader.swift in Sources */,
 				40C2348B244048AA00A5A462 /* BaseViewModel.swift in Sources */,
 				40C2348F2440582000A5A462 /* BaseTableView.swift in Sources */,
 				40C85A10243F572300D9B5BE /* UIViewController+iSearch.swift in Sources */,
